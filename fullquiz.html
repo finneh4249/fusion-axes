@@ -24,7 +24,7 @@
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="instructions.html" class="nav-link">Instructions</a>
                 <a href="quiz.html" class="nav-link">Quick Quiz</a>
-                <a href="fullquiz.html" class="nav-link active">Full Assessment</a>
+                <a href="fullquiz.html" class="nav-link active" aria-current="page">Full Assessment</a>
             </div>
         </div>
     </nav>
@@ -36,18 +36,24 @@
             <p class="quiz-subtitle">Comprehensive evaluation of your political values alignment</p>
             
             <!-- Progress Bar -->
-            <div class="progress-container">
+            <div class="progress-container"
+                 role="progressbar"
+                 id="quiz-progress-bar-container"
+                 aria-label="Quiz Progress"
+                 aria-valuemin="0"
+                 aria-valuemax="100"
+                 aria-valuenow="0">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill"></div>
                 </div>
-                <div class="progress-text" id="question-number">Loading...</div>
+                <div class="progress-text" id="question-number" aria-live="polite">Loading...</div>
             </div>
         </div>
 
         <!-- Question Card -->
         <div class="question-card">
             <div class="question-content">
-                <p class="question-text" id="question-text">Loading your first question...</p>
+                <p class="question-text" id="question-text" aria-live="polite">Loading your first question...</p>
             </div>
 
             <!-- Answer Options -->

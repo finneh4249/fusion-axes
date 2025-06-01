@@ -97,9 +97,11 @@ a:hover {
    FOCUS & ACCESSIBILITY
    ============================*/
 
-.focus-visible:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+.focus-visible:focus,
+*:focus-visible { /* Apply to any element that matches :focus-visible */
+    outline: 3px solid var(--color-primary-light); /* Brighter for more visibility */
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--color-primary-dark); /* Optional: adds an outer glow */
 }
 
 @media (prefers-reduced-motion: reduce) {

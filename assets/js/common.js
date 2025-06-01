@@ -59,10 +59,38 @@ export class QuizUtils {
      * @param {number} totalQuestions - Total number of questions
      */
     static updateProgressBar(currentQuestion, totalQuestions) {
-        const progressBar = document.getElementById('progress-bar');
-        if (progressBar) {
-            const percentage = ((currentQuestion) / totalQuestions) * 100;
-            progressBar.style.width = `${percentage}%`;
+        const percentage = totalQuestions > 0 ? ((currentQuestion) / totalQuestions) * 100 : 0;
+        const roundedPercentage = Math.round(percentage);
+
+        // Update ARIA value on the container
+        const progressContainer = DOMUtils.getElementById('quiz-progress-bar-container');
+        if (progressContainer) {
+            progressContainer.setAttribute('aria-valuenow', roundedPercentage);
+        }
+
+        // Update visual width of the progress bar itself
+        // quiz.html uses #progress-bar directly for the fill
+        const progressBarFillQuiz = DOMUtils.getElementById('progress-bar');
+        if (progressBarFillQuiz && progressBarFillQuiz.classList.contains('quiz-progress-bar')) {
+            progressBarFillQuiz.style.width = `${percentage}%`;
+        }
+
+        // fullquiz.html uses #progress-fill nested inside .progress-bar
+        const progressBarFillFullQuiz = DOMUtils.getElementById('progress-fill');
+        if (progressBarFillFullQuiz && progressBarFillFullQuiz.classList.contains('progress-fill')) {
+            progressBarFillFullQuiz.style.width = `${percentage}%`;
+        }
+        
+        // Update the question number text if it exists
+        const questionNumberDisplay = DOMUtils.getElementById('question-number');
+        if (questionNumberDisplay) {
+            // currentQuestion is 0-based for calculation, display 1-based
+            const displayQuestionNumber = totalQuestions > 0 ? currentQuestion + 1 : 0;
+            if (currentQuestion < totalQuestions) {
+                 questionNumberDisplay.textContent = `Question ${displayQuestionNumber} of ${totalQuestions}`;
+            } else {
+                 questionNumberDisplay.textContent = `Quiz Complete!`; // Or some other completion message
+            }
         }
     }
 
@@ -207,4 +235,22 @@ export class EventUtils {
         }
     }
 }
+/**
+ * Mobile Navigation Toggle
+ */
+export function initializeMobileNav() {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileNavToggle && navLinks) {
+        EventUtils.addEventListener(mobileNavToggle, 'click', () => {
+            const isVisible = navLinks.getAttribute('data-visible') === 'true';
+            navLinks.setAttribute('data-visible', !isVisible);
+            mobileNavToggle.setAttribute('aria-expanded', !isVisible);
+        });
+    }
+}
+
+// Initialize mobile navigation when the DOM is ready
+EventUtils.addEventListener(document, 'DOMContentLoaded', initializeMobileNav);
 

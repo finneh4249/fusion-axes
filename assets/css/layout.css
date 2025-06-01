@@ -337,9 +337,7 @@
         padding: var(--spacing-12) 0;
     }
     
-    .nav-links {
-        display: none; /* Could implement mobile menu */
-    }
+    /* .nav-links styling is now handled in components.css for mobile */
 }
 
 @media (min-width: 641px) and (max-width: 768px) {
