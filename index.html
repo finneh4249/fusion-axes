@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <!-- Styles -->
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -42,7 +42,10 @@
             <img src="icon.svg" alt="Fusion Party" class="nav-logo">
             <span class="nav-title">Fusion Values</span>
         </div>
-        <div class="nav-links">
+        <button class="mobile-nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links-menu">
+           <span class="hamburger-icon"></span>
+        </button>
+        <div class="nav-links" id="nav-links-menu">
             <a href="#about" class="nav-link">About</a>
             <a href="#values" class="nav-link">Values</a>
         </div>
@@ -279,4 +282,5 @@
     </div>
 </footer>
 
+<script type="module" src="assets/js/common.js"></script>
 </body>

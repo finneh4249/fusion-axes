@@ -20,7 +20,7 @@ body {
     font-weight: var(--font-weight-normal);
     line-height: 1.6;
     color: var(--color-gray-800);
-    background: var(--color-white); /* Clean white background instead of gradient */
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
     min-height: 100vh;
 }
 
@@ -97,9 +97,11 @@ a:hover {
    FOCUS & ACCESSIBILITY
    ============================*/
 
-.focus-visible:focus {
-    outline: 2px solid var(--color-primary);
-    outline-offset: 2px;
+.focus-visible:focus,
+*:focus-visible { /* Apply to any element that matches :focus-visible */
+    outline: 3px solid var(--color-primary-light); /* Brighter for more visibility */
+    outline-offset: 3px;
+    box-shadow: 0 0 0 3px var(--color-primary-dark); /* Optional: adds an outer glow */
 }
 
 @media (prefers-reduced-motion: reduce) {
