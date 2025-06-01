@@ -1,182 +1,66 @@
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href='assets/css/main.css' rel='stylesheet' type='text/css'>
 <title>Fusion Party Value Alignment Quiz</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<!-- Ensure your questions are in fusion_questions.js -->
-<script type="application/javascript"
-        src="questions.js"></script>
+<script type="application/javascript" src="questions.js"></script>
+<script type="module" src="assets/js/common.js"></script>
+<script type="module" src="assets/js/quiz.js"></script>
 
-<h1>Fusion Party Value Alignment</h1>
-<hr>
-<h2 style="text-align:center;" id="question-number">Loading...</h2>
-<p class="question" id="question-text"></p>
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="icon.svg" alt="Fusion Party" class="nav-logo">
+            <span class="nav-title">Fusion Values</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </div>
+</nav>
 
-<!-- Button values: +2 (Strongly Agree) down to -2 (Strongly Disagree) -->
-<button class="button" onclick="answer_question(2)" style="background-color: #1b5e20;">Strongly Agree</button> <br>
-<button class="button" onclick="answer_question(1)" style="background-color: #4caf50;">Agree</button> <br>
-<button class="button" onclick="answer_question(0)" style="background-color: #bbbbbb;">Neutral/Unsure</button> <br>
-<button class="button" onclick="answer_question(-1)" style="background-color: #f44336;">Disagree</button> <br>
-<button class="button" onclick="answer_question(-2)" style="background-color: #b71c1c;">Strongly Disagree</button> <br>
-
-<button class="small_button" onclick="prev_question()" id="back_button">Previous</button>
-<button class="small_button_off" id="back_button_off">Previous</button><br>
-
-<script>
-    // pillarScores stores the raw accumulated score for each of the 6 Fusion values.
-    // Order: PersonalLiberty, Advancement, EcologicalHarmony, Safety, EthicalConduct, Equity
-    let pillarScores = [0, 0, 0, 0, 0, 0]; 
-    let currentQuestionIndex = 0; // Tracks the current question number being displayed
-    let userResponses = []; // Stores the raw user choice (-2 to +2) for each question, for "Previous" functionality
+<!-- Quiz Container -->
+<div class="quiz-container">
+    <div class="quiz-header">
+        <h1 class="results-title">Value Alignment Assessment</h1>
+        <div class="quiz-progress">
+            <div class="quiz-progress-bar" id="progress-bar" style="width: 0%;"></div>
+        </div>
+        <div class="question-number" id="question-number">Loading...</div>
+    </div>
     
-    // questionsInOrder will store an array of [pillarIdx, scoreLevelIdx, questionInLevelIdx] for shuffled questions
-    const questionsInOrder = []; 
+    <div class="question-container">
+        <p class="question-text" id="question-text">Loading question...</p>
+    </div>
     
-    // scoreLevelValues maps the 'score_level_index' (0-7) from your questions.js 
-    // to the inherent point value of that proposition (+4 for most aligned, -4 for least).
-    const scoreLevelValues = [4, 3, 2, 1, -1, -2, -3, -4]; // Index 0 is +4, Index 7 is -4
+    <div class="answer-buttons">
+        <button class="button answer-button strongly-agree" onclick="answer_question(2)">
+            <span>Strongly Agree</span>
+        </button>
+        <button class="button answer-button agree" onclick="answer_question(1)">
+            <span>Agree</span>
+        </button>
+        <button class="button answer-button neutral" onclick="answer_question(0)">
+            <span>Neutral/Unsure</span>
+        </button>
+        <button class="button answer-button disagree" onclick="answer_question(-1)">
+            <span>Disagree</span>
+        </button>
+        <button class="button answer-button strongly-disagree" onclick="answer_question(-2)">
+            <span>Strongly Disagree</span>
+        </button>
+    </div>
+    
+    <div class="quiz-navigation">
+        <button class="small_button nav-button" onclick="prev_question()" id="back_button">← Previous</button>
+        <button class="small_button_off nav-button" id="back_button_off" disabled>← Previous</button>    </div>
+</div>
 
-    // --- Initialization ---
-    prepareAllQuestions(questionsInOrder);
-    renderCurrentQuestion();
-
-    /**
-     * Flattens the 3D questions array into a 1D array of question references, then shuffles it.
-     * Each element in qsOrderArray becomes [pillarIdx, scoreLevelIdx, questionInLevelIdx]
-     */
-    function prepareAllQuestions(qsOrderArray) {
-        // Assuming 'questions' is globally available from fusion_questions.js
-        // questions[pillarIdx][scoreLevelIdx][questionInLevelIdx]
-        for (let pillarIdx = 0; pillarIdx < questions.length; pillarIdx++) { // Should be 6 pillars
-            for (let scoreLevelIdx = 0; scoreLevelIdx < questions[pillarIdx].length; scoreLevelIdx++) { // Should be 8 score levels
-                for (let questionInLevelIdx = 0; questionInLevelIdx < questions[pillarIdx][scoreLevelIdx].length; questionInLevelIdx++) {
-                    qsOrderArray.push([pillarIdx, scoreLevelIdx, questionInLevelIdx]);
-                }
-            }
-        }
-        shuffleArray(qsOrderArray);
-    }
-
-    /**
-     * Displays the current question and updates the question counter.
-     * Handles visibility of the "Previous" button.
-     */
-    function renderCurrentQuestion() {
-        if (currentQuestionIndex >= questionsInOrder.length) {
-            // This case should ideally be handled by answer_question() calling showResults()
-            // but as a fallback:
-            showResults();
-            return;
-        }
-
-        const [pillarIdx, scoreLevelIdx, questionInLevelIdx] = questionsInOrder[currentQuestionIndex];
-        
-        document.getElementById("question-text").innerHTML = questions[pillarIdx][scoreLevelIdx][questionInLevelIdx];
-        document.getElementById("question-number").innerHTML = `Question ${currentQuestionIndex + 1} of ${questionsInOrder.length}`;
-
-        // Toggle "Previous" button visibility
-        const backButton = document.getElementById("back_button");
-        const backButtonOff = document.getElementById("back_button_off");
-        if (currentQuestionIndex === 0) {
-            backButton.style.display = 'none';
-            backButtonOff.style.display = 'block';
-        } else {
-            backButton.style.display = 'block';
-            backButtonOff.style.display = 'none';
-        }
-    }
-
-    /**
-     * Shuffles an array in place using the Fisher-Yates algorithm.
-     */
-    function shuffleArray(array) {
-        for (let i = array.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]]; // ES6 swap
-        }
-    }
-
-    /**
-     * Processes the user's answer to the current question.
-     * userChoice is an integer from -2 (Strongly Disagree) to +2 (Strongly Agree).
-     */
-    function answer_question(userChoice) {
-        const [pillarIdx, scoreLevelIdx] = questionsInOrder[currentQuestionIndex];
-        
-        // Get the inherent score value of the current question's proposition (e.g., +4, +3 ... -4)
-        const propositionScoreValue = scoreLevelValues[scoreLevelIdx];
-
-        // Calculate the score contribution for this question.
-        // The user's choice (-2 to +2) is scaled to a -1.0 to +1.0 multiplier.
-        // This multiplier then scales the proposition's inherent score.
-        // E.g., Strongly Agree (+2) with a +4 proposition: (2/2.0) * 4 = +4 points.
-        // E.g., Strongly Disagree (-2) with a +4 proposition: (-2/2.0) * 4 = -4 points.
-        // E.g., Agree (+1) with a -3 proposition: (1/2.0) * -3 = -1.5 points.
-        const scoreContribution = (userChoice / 2.0) * propositionScoreValue;
-        pillarScores[pillarIdx] += scoreContribution;
-        
-        userResponses[currentQuestionIndex] = userChoice; // Store raw choice for "Previous" button
-        currentQuestionIndex++;
-
-        if (currentQuestionIndex < questionsInOrder.length) {
-            renderCurrentQuestion();
-        } else {
-            showResults();
-        }
-    }
-
-    /**
-     * Handles the "Previous" button click.
-     * Reverts the score change from the last answered question and re-renders it.
-     */
-    function prev_question() {
-        if (currentQuestionIndex === 0) {
-            return; // Cannot go back from the first question
-        }
-        currentQuestionIndex--; // Move back to the previous question's index
-
-        const [pillarIdx, scoreLevelIdx] = questionsInOrder[currentQuestionIndex];
-        const previousUserChoice = userResponses[currentQuestionIndex]; // Get the user's stored answer
-        const propositionScoreValue = scoreLevelValues[scoreLevelIdx];
-
-        // Subtract the score that was previously added for this question
-        const scoreToRevert = (previousUserChoice / 2.0) * propositionScoreValue;
-        pillarScores[pillarIdx] -= scoreToRevert;
-        
-        // userResponses[currentQuestionIndex] can be left as is, or cleared if you don't want to pre-fill
-        renderCurrentQuestion(); // Re-display the question
-    }
-
-    /**
-     * Normalizes a raw pillar score (expected range -32 to +32) to a 0-100 scale.
-     */
-    function normalizePillarScore(rawScore) {
-        const minRawScore = -32; // 8 questions * -4 points (min score per question)
-        const maxRawScore = 32;  // 8 questions * +4 points (max score per question)
-        
-        // Cap rawScore to prevent issues if logic slightly over/under shoots due to multiple questions per level etc.
-        const cappedScore = Math.max(minRawScore, Math.min(rawScore, maxRawScore));
-
-        const normalized = ((cappedScore - minRawScore) / (maxRawScore - minRawScore)) * 100;
-        return Math.round(normalized); // Return as a whole number percentage
-    }
-
-    /**
-     * Constructs the results URL and redirects the user.
-     */
-    function showResults() {
-        // Use more descriptive names for URL parameters if desired by the results page
-        location.href = `results.html` +
-            `?liberty=${normalizePillarScore(pillarScores[0])}` +
-            `&advancement=${normalizePillarScore(pillarScores[1])}` +
-            `&harmony=${normalizePillarScore(pillarScores[2])}` +
-            `&safety=${normalizePillarScore(pillarScores[3])}` +
-            `ðics=${normalizePillarScore(pillarScores[4])}` +
-            `&equity=${normalizePillarScore(pillarScores[5])}`;
-    }
-</script>
 </body>
+</html>

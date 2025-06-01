@@ -1,18 +1,118 @@
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>9Axes Quiz</title>
+<title>Fusion Party Value Alignment - Instructions</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
-<h1>9Axes</h1>
-<hr>
-<h2 style="text-align:center;">Instructions</h2>
-<p class="question">You will be presented with a series of statements. For each one, click the button with your opinion on it.</p>
-<button class="button" onclick="location.href='fullquiz.html';" style="background-color: #2196f3;">Give me the full version! (216 questions)</button><br>
-<button class="button" onclick="location.href='quiz.html';" style="background-color: #2196f3;">Got it! Give me the short version! (45 questions)</button> <br>
-<button class="button" onclick="location.href='index.html';" style="background-color: #f44336;">Wait, nevermind!</button> <br>
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="icon.svg" alt="Fusion Party" class="nav-logo">
+            <span class="nav-title">Fusion Values</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">← Back to Home</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Instructions Container -->
+<div class="section">
+    <div class="section-header">
+        <h1 class="section-title">How to Take the Assessment</h1>
+        <p class="section-subtitle">Everything you need to know before starting</p>
+    </div>
+    
+    <div class="content-grid">
+        <div class="content-card">
+            <div class="card-icon">📝</div>
+            <h3 class="card-title">How It Works</h3>
+            <p class="card-description">You'll be presented with 48 carefully crafted statements. For each one, simply click the button that best represents your level of agreement or disagreement.</p>
+        </div>
+        
+        <div class="content-card">
+            <div class="card-icon">⏱️</div>
+            <h3 class="card-title">Time Required</h3>
+            <p class="card-description">The assessment takes approximately 8-10 minutes to complete. There's no time pressure - take as long as you need to consider each statement thoughtfully.</p>
+        </div>
+        
+        <div class="content-card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Be Honest</h3>
+            <p class="card-description">For the most accurate results, answer based on your genuine beliefs and values, not what you think sounds "correct" or socially desirable.</p>
+        </div>
+    </div>
+    
+    <div class="quiz-demo">
+        <h2 class="section-title" style="margin-top: var(--spacing-16);">Response Options</h2>
+        <p class="section-subtitle">You'll have five response options for each statement:</p>
+        
+        <div class="answer-buttons" style="max-width: 600px; margin: var(--spacing-8) auto;">
+            <div class="answer-button strongly-agree">
+                <span>Strongly Agree</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">You completely agree with the statement</span>
+            </div>
+            <div class="answer-button agree">
+                <span>Agree</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">You mostly agree with the statement</span>
+            </div>
+            <div class="answer-button neutral">
+                <span>Neutral/Unsure</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">You're undecided or the statement doesn't apply</span>
+            </div>
+            <div class="answer-button disagree">
+                <span>Disagree</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">You mostly disagree with the statement</span>
+            </div>
+            <div class="answer-button strongly-disagree">
+                <span>Strongly Disagree</span>
+                <span style="font-size: var(--font-size-sm); opacity: 0.8;">You completely disagree with the statement</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="benefits-container" style="margin-top: var(--spacing-16);">
+        <div class="cta-container">
+            <h3 style="margin-bottom: var(--spacing-4);">Ready to Begin?</h3>
+            <p style="margin-bottom: var(--spacing-6); color: var(--color-gray-600);">Start your value alignment assessment now</p>
+            <button class="btn btn-primary btn-large" onclick="location.href='quiz.html';">
+                <span>Start Assessment</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <div style="margin-top: var(--spacing-4);">
+                <button class="nav-button" onclick="location.href='index.html';" style="color: var(--color-gray-500);">
+                    ← Back to Overview
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Assessment Tips</h4>
+            <p>Remember, there are no right or wrong answers. This assessment is designed to understand your personal values and how they align with Fusion Party principles.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Privacy</h4>
+            <p>Your responses are processed locally in your browser and are not stored or transmitted to any external servers.</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fusion Party Value Alignment Quiz</p>
+    </div>
+</footer>
+
 </body>

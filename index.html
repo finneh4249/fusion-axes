@@ -1,64 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'> <!-- Links to your new Fusion-branded style.css -->
-<title>Fusion Party Value Alignment Quiz</title> <!-- CHANGED -->
-<link rel="icon" type="x-icon" href="fusion_icon.png"> <!-- Use a Fusion icon -->
-<link rel="shortcut icon" type="x-icon" href="fusion_icon.png">
-<meta charset="utf-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion Party Value Alignment Quiz - Discover Your Political Values</title>
+    <meta name="description" content="Take the comprehensive Fusion Party values assessment to discover your alignment with progressive political principles. Quick and detailed quiz options available.">
+    <meta name="keywords" content="political quiz, values assessment, Fusion Party, political alignment, progressive politics, Australian politics">
+    <meta name="author" content="Fusion Party">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fusionparty.org.au/values-quiz">
+    <meta property="og:title" content="Fusion Party Value Alignment Quiz">
+    <meta property="og:description" content="Discover your alignment with progressive political values through our comprehensive assessment.">
+    <meta property="og:image" content="values.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fusionparty.org.au/values-quiz">
+    <meta property="twitter:title" content="Fusion Party Value Alignment Quiz">
+    <meta property="twitter:description" content="Discover your alignment with progressive political values through our comprehensive assessment.">
+    <meta property="twitter:image" content="values.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<!-- Optional: Language toggle if you plan to support it -->
-<!-- <a href="/other-lang/">Other Language</a> -->
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="icon.svg" alt="Fusion Party" class="nav-logo">
+            <span class="nav-title">Fusion Values</span>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#values" class="nav-link">Values</a>
+        </div>
+    </div>
+</nav>
 
-<h1>Fusion Party Value Alignment Quiz</h1> <!-- CHANGED -->
-<hr>
-<button class="button" onclick="location.href='quiz.html';" style="font-size:32pt; padding: 15pt; margin-top: 1em; margin-bottom: 1.5em; background-color: #008C65;">Click here to discover your alignment!</button> <!-- CHANGED: Text, link to your quiz page, Fusion Green -->
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-badge">Political Values Assessment</div>
+        <h1 class="hero-title">Discover Your Alignment with Fusion Party Values</h1>
+        <p class="hero-description">Take our comprehensive 48-question assessment to understand how your personal views align with the Fusion Party's evidence-based approach to Australian politics.</p>
+        <div class="hero-cta">
+            <button class="btn btn-primary" onclick="location.href='instructions.html';">
+                <span>Start Assessment</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <div class="hero-meta">
+                <span class="meta-item">📊 48 Questions</span>
+                <span class="meta-item">⏱️ 8-10 Minutes</span>
+                <span class="meta-item">🎯 6 Core Values</span>
+            </div>
+        </div>
+    </div>
+    <div class="hero-visual">
+        <div class="hero-chart">
+            <div class="chart-container">
+                <div class="chart-bar" style="--height: 85%; --color: #5FACFF;">
+                    <span class="chart-label">Liberty</span>
+                </div>
+                <div class="chart-bar" style="--height: 72%; --color: #91313D;">
+                    <span class="chart-label">Progress</span>
+                </div>
+                <div class="chart-bar" style="--height: 91%; --color: #008C65;">
+                    <span class="chart-label">Ecology</span>
+                </div>
+                <div class="chart-bar" style="--height: 68%; --color: #3D4DCB;">
+                    <span class="chart-label">Safety</span>
+                </div>
+                <div class="chart-bar" style="--height: 89%; --color: #98A7C6;">
+                    <span class="chart-label">Ethics</span>
+                </div>
+                <div class="chart-bar" style="--height: 76%; --color: #D9B487;">
+                    <span class="chart-label">Equity</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<!-- Consider a compelling image representing Fusion's values or a diverse group of people -->
-<img src="fusion_banner_homepage.png" class="center" alt="Fusion Party Values Concept Image"></img>
-
-<h2>What is the Fusion Party Value Alignment Quiz?</h2>
-    <p>This quiz is designed to help you understand how your personal views and priorities align with the core values of the Fusion Party. Fusion Party is a forward-thinking political movement in Australia, built on a foundation of science, evidence, and a commitment to a free, fair, and innovative society.</p>
-    <p>You will be presented with a series of statements. For each one, simply indicate how much you agree or disagree. Your responses will help create a profile showing your alignment with each of Fusion's six foundational values. Answer honestly to get the most accurate reflection!</p>
-    <p>There are **48 questions** in total, designed to be thought-provoking yet straightforward for any Australian adult.
-    </p>
-
-<h2>What are Fusion Party's Core Values?</h2>
-    <p>The Fusion Party's approach to policy and decision-making is guided by a unique, structured framework of six core values. This quiz will show you how your perspectives relate to each of them:</p>
+<!-- About Section -->
+<section id="about" class="section">
+    <div class="section-header">
+        <h2 class="section-title">What is the Fusion Party Value Alignment Quiz?</h2>
+        <p class="section-subtitle">Understanding your political alignment through evidence-based assessment</p>
+    </div>
     
-    <p class="value-description"><b style="color:#5FACFF;">Personal Liberty:</b> Recognising the right of individuals to live their best life and pursue self-actualisation, balanced by the need for safety and ethical conduct. Fusion supports a "Positive Liberty" philosophy, aiming for maximum net freedom.</p>
-    
-    <p class="value-description"><b style="color:#91313D;">Advancement:</b> A progressive viewpoint valuing the continued application of reason, scientific discovery, and innovation to improve quality of life, increase access to resources, and solve societal challenges.</p>
-    
-    <p class="value-description"><b style="color:#008C65;">Ecological Harmony:</b> Valuing nature intrinsically, beyond just its use to humans. This involves an ecomodernist approach to reduce environmental impact while enabling high living standards, informed by principles of Deep Ecology.</p>
-    
-    <p class="value-description"><b style="color:#3D4DCB;">Safety:</b> Ensuring all people are safe from violence and deprivation, which includes the provision of necessities like food, shelter, and healthcare, and a focus on harm minimisation.</p>
-    
-    <p class="value-description"><b style="color:#98A7C6;">Ethical Conduct:</b> A commitment to honesty, transparency, and good faith in all actions, especially in government. Policies must be evidence-based, and systems designed to align with societal needs.</p>
-    
-    <p class="value-description"><b style="color:#D9B487;">Equity:</b> Ensuring that every person, regardless of background, has fair and just access to opportunities and services derived from the government. This is a moderating value that contextualises the others.</p>
+    <div class="content-grid">
+        <div class="content-card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Purpose</h3>
+            <p class="card-description">This quiz helps you understand how your personal views align with the Fusion Party's core values - a forward-thinking political movement built on science, evidence, and innovation.</p>
+        </div>
+        
+        <div class="content-card">
+            <div class="card-icon">📋</div>
+            <h3 class="card-title">Format</h3>
+            <p class="card-description">48 carefully crafted questions designed to be thought-provoking yet accessible for any Australian adult. Simply indicate your agreement level with each statement.</p>
+        </div>
+        
+        <div class="content-card">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title">Results</h3>
+            <p class="card-description">Receive a detailed profile showing your alignment with each of Fusion's six foundational values, plus personalized voting recommendations.</p>
+        </div>
+    </div>
+</section>
 
-<h2>Why Take This Quiz?</h2>
-    <p>Understanding your alignment with a political party's core values can be more insightful than just looking at individual policies. This quiz aims to:
-        <ul>
-            <li>Provide you with a deeper understanding of Fusion Party's foundational principles.</li>
-            <li>Help you reflect on your own political and social perspectives.</li>
-            <li>Offer a starting point for considering how your vote can best represent your views.</li>
-        </ul>
-    </p>
-    <p>At the end, you'll see your alignment with each of the six Fusion Values and receive a suggestion for how you might consider preferencing candidates in your electorate, based on your responses. You'll also have the option to discuss your results further with our AI guide!</p>
+<!-- Values Section -->
+<section id="values" class="section section-alt">
+    <div class="section-header">
+        <h2 class="section-title">Fusion Party's Core Values</h2>
+        <p class="section-subtitle">Six evidence-based principles guiding policy and decision-making</p>
+    </div>
+    
+    <div class="values-grid">
+        <div class="value-card" data-color="#5FACFF">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #5FACFF, #4A90E2);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Personal Liberty</h3>
+            </div>
+            <p class="value-description">Recognising the right of individuals to live their best life and pursue self-actualisation, balanced by safety and ethical conduct. Fusion supports "Positive Liberty" for maximum net freedom.</p>
+        </div>
+        
+        <div class="value-card" data-color="#91313D">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #91313D, #B04D5A);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M13 3l3.293 3.293-7 7-1.586-1.586L13 6.414V3m-2 16v-6h2v6h-2z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Advancement</h3>
+            </div>
+            <p class="value-description">A progressive viewpoint valuing continued application of reason, scientific discovery, and innovation to improve quality of life and solve societal challenges.</p>
+        </div>
+        
+        <div class="value-card" data-color="#008C65">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #008C65, #00A073);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.06.66C6.44 18.45 8.5 12.5 17 10c2.5-.5 4-2 4-4 0-1.5-1.5-3-4-3s-4 1.5-4 3c0 .5.17 1 .5 1.5L17 8z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Ecological Harmony</h3>
+            </div>
+            <p class="value-description">Valuing nature intrinsically beyond its use to humans. An ecomodernist approach to reduce environmental impact while enabling high living standards.</p>
+        </div>
+        
+        <div class="value-card" data-color="#3D4DCB">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #3D4DCB, #5A6CE8);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10.1V11H16V18H8V11H9.2V10.1C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10.1V11H13.5V10.1C13.5,8.7 12.8,8.2 12,8.2Z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Safety</h3>
+            </div>
+            <p class="value-description">Ensuring all people are safe from violence and deprivation, including provision of necessities like food, shelter, and healthcare with harm minimisation focus.</p>
+        </div>
+        
+        <div class="value-card" data-color="#98A7C6">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #98A7C6, #B5C2D9);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Ethical Conduct</h3>
+            </div>
+            <p class="value-description">Commitment to honesty, transparency, and good faith in all actions, especially government. Policies must be evidence-based and systems designed for societal needs.</p>
+        </div>
+        
+        <div class="value-card" data-color="#D9B487">
+            <div class="value-header">
+                <div class="value-icon" style="background: linear-gradient(135deg, #D9B487, #E5C39A);">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                    </svg>
+                </div>
+                <h3 class="value-title">Equity</h3>
+            </div>
+            <p class="value-description">Ensuring every person, regardless of background, has fair access to opportunities and government services. A moderating value that contextualises the others.</p>
+        </div>
+    </div>
+</section>
 
+<!-- Benefits Section -->
+<section class="section">
+    <div class="section-header">
+        <h2 class="section-title">Why Take This Assessment?</h2>
+        <p class="section-subtitle">Gain deeper insights into your political alignment and values</p>
+    </div>
+    
+    <div class="benefits-container">
+        <div class="benefits-list">
+            <div class="benefit-item">
+                <div class="benefit-icon">🧭</div>
+                <div class="benefit-content">
+                    <h4>Deeper Understanding</h4>
+                    <p>Go beyond individual policies to understand foundational political principles that guide decision-making.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">🪞</div>
+                <div class="benefit-content">
+                    <h4>Self Reflection</h4>
+                    <p>Gain insights into your own political and social perspectives through structured questioning.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">🗳️</div>
+                <div class="benefit-content">
+                    <h4>Informed Voting</h4>
+                    <p>Receive personalised recommendations for how to preference candidates based on your values alignment.</p>
+                </div>
+            </div>
+            
+            <div class="benefit-item">
+                <div class="benefit-icon">💬</div>
+                <div class="benefit-content">
+                    <h4>AI Discussion</h4>
+                    <p>Explore your results further with our AI guide for deeper political conversations and insights.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-container">
+            <button class="btn btn-primary btn-large" onclick="location.href='quiz.html';">
+                <span>Begin Your Assessment</span>
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+            <p class="cta-note">Free • Anonymous • Takes 8-10 minutes</p>
+        </div>
+    </div>
+</section>
 
-<hr style="margin-top: 2em; margin-bottom: 1em;">
-<p style="font-size: 10pt; text-align: center;">
-    Legal notice: The original 8values project, from which the quiz engine structure was adapted, is licensed under the MIT License. 
-    The 8values license grants the rights to "modify, merge, publish, distribute, sublicense, and/or sell copies of the Software" 
-    as long as "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software." 
-    The original notice can be found with the 8values project. This Fusion Party Value Alignment Quiz is released under the same principles.
-</p>
-<p style="font-size: 10pt; text-align: center; margin-bottom: 2em;">
-    To learn more about the Fusion Party, please visit <a href="[Your Fusion Party Website Link Here]" target="_blank">our official website</a>.
-</p>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>About Fusion Party</h4>
+            <p>A forward-thinking political movement built on science, evidence, and innovation.</p>
+            <a href="#" class="footer-link">Visit Official Website →</a>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Legal Notice</h4>
+            <p class="footer-legal">The original 8values project structure was adapted under MIT License. This Fusion Party Value Alignment Quiz is released under the same principles.</p>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fusion Party Value Alignment Quiz</p>
+    </div>
+</footer>
 
 </body>

@@ -1,53 +1,78 @@
 <head>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
-<link href='style.css' rel='stylesheet' type='text/css'>
-<title>Fusion Party Value Alignment Results</title> <!-- CHANGED -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href='assets/css/main.css' rel='stylesheet' type='text/css'>
+<title>Fusion Party Value Alignment Results</title>
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<!-- Ensure your archetypes are in fusion_ideologies.js -->
-<script type="application/javascript" src="ideologies.js"></script> 
-
 <body>
-<h1>Fusion Party Value Alignment</h1> <!-- CHANGED -->
-<hr>
+<script type="application/javascript" src="ideologies.js"></script>
+<script type="module" src="assets/js/common.js"></script>
+<script type="module" src="assets/js/results.js"></script>
 
-<h1>Your Results</h1>
+<!-- Navigation -->
+<nav class="nav">
+    <div class="nav-container">
+        <div class="nav-brand">
+            <img src="icon.svg" alt="Fusion Party" class="nav-logo">
+            <span class="nav-title">Fusion Values</span>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">← Back to Home</a>
+            <a href="quiz.html" class="nav-link">Retake Quiz</a>
+        </div>
+    </div>
+</nav>
 
-<!-- Section for Personal Liberty -->
-<h2><span class="weight-300" id="value-liberty-label">Personal Liberty</span></h2>
-<div class="axis">
-    <img id="img-liberty-positive" src="value_images/liberty_positive.png" height="128pt"/> <!-- Placeholder image -->
-    <div class="bar liberty-positive" id="bar-liberty-positive"><div class="text-wrapper" id="liberty-positive"></div></div>
-    <div class="bar liberty-negative" id="bar-liberty-negative"><div class="text-wrapper" id="liberty-negative"></div></div>
-    <img id="img-liberty-negative" src="value_images/liberty_negative.png" height="128pt"/> <!-- Placeholder image -->
+<!-- Results Container -->
+<div class="results-container">
+    <div class="results-header">
+        <h1 class="results-title">Your Value Alignment Results</h1>
+        <p class="section-subtitle">Discover how your personal values align with Fusion Party's core principles</p>
+    </div>
+    
+    <div class="results-grid" id="results-grid">
+        <!-- Results will be populated by JavaScript -->
+    </div>
+    
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">What's Next?</h2>
+            <p class="section-subtitle">Explore your political alignment further</p>
+        </div>
+        
+        <div class="content-grid">
+            <div class="content-card">
+                <div class="card-icon">🗳️</div>
+                <h3 class="card-title">Voting Recommendations</h3>
+                <p class="card-description">Based on your alignment, consider how to preference candidates in your electorate for maximum value representation.</p>
+                <button class="btn btn-primary" onclick="showVotingRecommendations()">
+                    <span>View Recommendations</span>
+                </button>
+            </div>
+            
+            <div class="content-card">
+                <div class="card-icon">💬</div>
+                <h3 class="card-title">Discuss with AI</h3>
+                <p class="card-description">Explore your results further with our AI guide for deeper political conversations and insights.</p>
+                <button class="btn btn-primary" onclick="startAIDiscussion()">
+                    <span>Start Discussion</span>
+                </button>
+            </div>
+            
+            <div class="content-card">
+                <div class="card-icon">📊</div>
+                <h3 class="card-title">Share Your Results</h3>
+                <p class="card-description">Share your value alignment with friends and family to compare perspectives and start meaningful conversations.</p>
+                <button class="btn btn-primary" onclick="shareResults()">
+                    <span>Share Results</span>
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-
-<!-- Section for Advancement -->
-<h2><span class="weight-300" id="value-advancement-label">Advancement</span></h2>
-<div class="axis">
-    <img id="img-advancement-positive" src="value_images/advancement_positive.png" height="128pt"/>
-    <div class="bar advancement-positive" id="bar-advancement-positive"><div class="text-wrapper" id="advancement-positive"></div></div>
-    <div class="bar advancement-negative" id="bar-advancement-negative"><div class="text-wrapper" id="advancement-negative"></div></div>
-    <img id="img-advancement-negative" src="value_images/advancement_negative.png" height="128pt"/>
-</div>
-
-<!-- Section for Ecological Harmony -->
-<h2><span class="weight-300" id="value-harmony-label">Ecological Harmony</span></h2>
-<div class="axis">
-    <img id="img-harmony-positive" src="value_images/harmony_positive.png" height="128pt"/>
-    <div class="bar harmony-positive" id="bar-harmony-positive"><div class="text-wrapper" id="harmony-positive"></div></div>
-    <div class="bar harmony-negative" id="bar-harmony-negative"><div class="text-wrapper" id="harmony-negative"></div></div>
-    <img id="img-harmony-negative" src="value_images/harmony_negative.png" height="128pt"/>
-</div>
-
-<!-- Section for Safety -->
-<h2><span class="weight-300" id="value-safety-label">Safety</span></h2>
-<div class="axis">
-    <img id="img-safety-positive" src="value_images/safety_positive.png" height="128pt"/>
-    <div class="bar safety-positive" id="bar-safety-positive"><div class="text-wrapper" id="safety-positive"></div></div>
-    <div class="bar safety-negative" id="bar-safety-negative"><div class="text-wrapper" id="safety-negative"></div></div>
     <img id="img-safety-negative" src="value_images/safety_negative.png" height="128pt"/>
 </div>
 
@@ -80,13 +105,11 @@
 
 <br><br>
 
-<canvas id="banner" width=800 height=800 style="font-family:Montserrat"></canvas> <!-- Adjusted height for 6 axes -->
+<canvas id="banner" width=800 height=800 style="font-family:Inter"></canvas> <!-- Adjusted height for 6 axes -->
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back to Quiz</button> <br>
 <!-- ADD A BUTTON/LINK HERE TO PASS SCORES TO THE AI AGENT FOR HTV -->
 <button class="button" onclick="generateHTV()" style="background-color: #4caf50;">Get My How-To-Vote Suggestion</button> <br>
 
-
-<script>
     // Ensure valueBasedArchetypes is loaded from fusion_ideologies.js
     // (This script assumes it's globally available)
 
@@ -215,10 +238,8 @@
         const initialY = 70;
         const imgSize = 100;
         const barAreaXStart = 120;
-        const barAreaWidth = 560; // Total width for both positive and negative bars
-
-        ctx.fillStyle="#222222";
-        ctx.font="700 60px Montserrat"; // Adjusted font size
+        const barAreaWidth = 560; // Total width for both positive and negative bars        ctx.fillStyle="#222222";
+        ctx.font="700 60px Inter"; // Adjusted font size
         ctx.textAlign="center";
         ctx.fillText("Fusion Value Alignment", 400, 50); // Centered title
 
@@ -250,9 +271,8 @@
             ctx.fillStyle = value.negativeColor;
             ctx.fillRect(barAreaXStart + positiveWidth, barYPos, negativeWidth, barHeight);
             
-            // Text on bars
-            ctx.fillStyle = "#FFFFFF"; // White text for better contrast on colored bars
-            ctx.font = "bold 30px Montserrat";
+            // Text on bars            ctx.fillStyle = "#FFFFFF"; // White text for better contrast on colored bars
+            ctx.font = "bold 30px Inter";
             ctx.textAlign = "left";
             if (userScores[value.id] > 15) { // Only draw if bar is wide enough
                  ctx.fillText(`${userScores[value.id].toFixed(0)}%`, barAreaXStart + 5, textYPos);
@@ -260,17 +280,15 @@
             ctx.textAlign = "right";
             if ((100 - userScores[value.id]) > 15) {
                  ctx.fillText(`${(100 - userScores[value.id]).toFixed(0)}%`, barAreaXStart + barAreaWidth - 5, textYPos);
-            }
-
-            // Value Name Label
+            }            // Value Name Label
             ctx.fillStyle = "#222222";
-            ctx.font = "bold 24px Montserrat";
+            ctx.font = "bold 24px Inter";
             ctx.textAlign="center";
             ctx.fillText(value.name, 400, yPos - 5); // Label above the bar
         });
 
         // Footer text
-        ctx.font="300 20px Montserrat";
+        ctx.font="300 20px Inter";
         ctx.fillStyle = "#555555";
         ctx.textAlign="center";
         ctx.fillText("FusionParty.org.au/values-quiz", 400, 780); // Example footer
@@ -293,4 +311,172 @@
     }
 
 </script>
+
+<script>
+    // Modern results page JavaScript
+    const valueNames = [
+        'Personal Liberty',
+        'Advancement', 
+        'Ecological Harmony',
+        'Safety',
+        'Ethical Conduct',
+        'Equity'
+    ];
+
+    const valueDescriptions = [
+        'Recognising the right of individuals to live their best life and pursue self-actualisation, balanced by safety and ethical conduct.',
+        'A progressive viewpoint valuing continued application of reason, scientific discovery, and innovation to improve quality of life.',
+        'Valuing nature intrinsically beyond its use to humans. An ecomodernist approach to reduce environmental impact while enabling high living standards.',
+        'Ensuring all people are safe from violence and deprivation, including provision of necessities like food, shelter, and healthcare.',
+        'Commitment to honesty, transparency, and good faith in all actions, especially government. Policies must be evidence-based.',
+        'Ensuring every person, regardless of background, has fair access to opportunities and government services.'
+    ];
+
+    const valueColors = [
+        'liberty',
+        'advancement', 
+        'ecology',
+        'safety',
+        'ethics',
+        'equity'
+    ];
+
+    const valueIcons = [
+        '<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>',
+        '<path d="M13 3l3.293 3.293-7 7-1.586-1.586L13 6.414V3m-2 16v-6h2v6h-2z"/>',
+        '<path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.06.66C6.44 18.45 8.5 12.5 17 10c2.5-.5 4-2 4-4 0-1.5-1.5-3-4-3s-4 1.5-4 3c0 .5.17 1 .5 1.5L17 8z"/>',
+        '<path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10.1V11H16V18H8V11H9.2V10.1C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10.1V11H13.5V10.1C13.5,8.7 12.8,8.2 12,8.2Z"/>',
+        '<path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>',
+        '<path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>'
+    ];
+
+    function renderResults() {
+        // Get scores from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const scores = [];
+        
+        for (let i = 0; i < 6; i++) {
+            const score = parseInt(urlParams.get(`pillar${i}`)) || 0;
+            scores.push(score);
+        }
+
+        // Calculate percentages (assuming max possible score is around 100)
+        const maxScore = Math.max(...scores.map(Math.abs));
+        const normalizedScores = scores.map(score => {
+            const percentage = maxScore > 0 ? Math.abs(score) / maxScore * 100 : 0;
+            return Math.min(100, Math.max(0, percentage));
+        });
+
+        // Render results grid
+        const resultsGrid = document.getElementById('results-grid');
+        resultsGrid.innerHTML = '';
+
+        scores.forEach((score, index) => {
+            const percentage = normalizedScores[index];
+            const resultCard = createResultCard(
+                valueNames[index],
+                valueDescriptions[index],
+                score,
+                percentage,
+                valueColors[index],
+                valueIcons[index]
+            );
+            resultsGrid.appendChild(resultCard);
+        });
+
+        // Animate bars after rendering
+        setTimeout(() => {
+            document.querySelectorAll('.result-bar-fill').forEach(bar => {
+                bar.style.width = bar.dataset.width;
+            });
+        }, 500);
+    }
+
+    function createResultCard(name, description, score, percentage, colorClass, iconPath) {
+        const card = document.createElement('div');
+        card.className = `result-card ${colorClass}`;
+        
+        card.innerHTML = `
+            <div class="result-header">
+                <div class="result-icon ${colorClass}">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        ${iconPath}
+                    </svg>
+                </div>
+                <div class="result-value-name">${name}</div>
+            </div>
+            
+            <div class="result-score ${colorClass}">${score > 0 ? '+' : ''}${score}</div>
+            
+            <div class="result-bar">
+                <div class="result-bar-fill ${colorClass}" data-width="${percentage}%" style="width: 0%;"></div>
+            </div>
+            
+            <p class="result-description">${description}</p>
+        `;
+        
+        return card;
+    }
+
+    function showVotingRecommendations() {
+        // Create modal or new section with voting recommendations
+        alert('Voting recommendations feature would be implemented here based on your specific alignment scores.');
+    }
+
+    function startAIDiscussion() {
+        // Launch AI discussion interface
+        alert('AI discussion feature would be implemented here to explore your results further.');
+    }
+
+    function shareResults() {
+        // Create shareable link or image
+        const url = window.location.href;
+        if (navigator.share) {
+            navigator.share({
+                title: 'My Fusion Party Value Alignment Results',
+                text: 'Check out my political value alignment results!',
+                url: url
+            });
+        } else {
+            // Fallback for browsers without Web Share API
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Results link copied to clipboard!');
+            });
+        }
+    }
+
+    // Initialize results when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        renderResults();
+        
+        // Add fade-in animation
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
+        
+        setTimeout(() => {
+            document.body.style.opacity = '1';
+        }, 100);
+    });
+</script>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>About Your Results</h4>
+            <p>Your value alignment scores reflect how closely your responses match each of Fusion Party's core principles. Higher scores indicate stronger alignment.</p>
+        </div>
+        
+        <div class="footer-section">
+            <h4>Next Steps</h4>
+            <p>Consider exploring Fusion Party's policies and candidates in your area to see how these values translate into real political action.</p>
+            <a href="#" class="footer-link">Learn More About Fusion →</a>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fusion Party Value Alignment Quiz</p>
+    </div>
+</footer>
+
 </body>
