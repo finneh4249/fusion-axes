@@ -178,7 +178,7 @@
     let fusionMatchStats = {};
 
     // valueBasedArchetypes should be loaded from fusion_ideologies.js
-    valueBasedArchetypes.forEach(archetype => {
+    ideologies.forEach(archetype => {
         const matchStats = calculateSimilarity(userScores, archetype.stats);
         if (archetype.name === "Fusion Party Alignment") {
             fusionMatchStats = { ...matchStats, name: archetype.name, description: archetype.description };
