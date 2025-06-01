@@ -20,13 +20,14 @@ p, li {
     line-height: 1;
     margin: 4pt;
 }
-a{
+a {
     color: #2222DD;
+    font-family: inherit; /* Ensure links inherit font */
 }
-a:hover{
+a:hover {
     color: #22DDDD;
 }
-p.value-description {
+p.value-description { /* This class might be useful for explaining values on results page */
     text-indent: -16pt;
     margin-left: 20pt;
 }
@@ -37,7 +38,7 @@ p.question {
     font-weight: normal;
     width: 70%;
     min-width: 500pt;
-    min-height: 144pt;
+    min-height: 144pt; /* Or adjust as needed for your question length */
     background-color: #eeeeee;
     padding: 16pt;
     border-radius: 16pt;
@@ -46,43 +47,41 @@ p.question {
     justify-content: center;
     align-items: center;
     text-align: center;
-
 }
 h1 {
     color: #222222;
     font-family: 'Montserrat', sans-serif;
-    font-size: 72pt;
+    font-size: 72pt; /* Consider if slightly smaller for "Fusion Party Value Alignment" */
     text-align: center;
-    line-height: 72pt;
+    line-height: 1; /* Adjusted for better spacing */
     margin-top: 0pt;
-    margin-bottom: 0pt;
+    margin-bottom: 0.2em; /* Added some bottom margin */
 }
-.ideology {
+.ideology { /* For "Closest Match" text sections */
     text-align: center;
 }
 h2 {
     color: #333333;
     font-family: 'Montserrat', sans-serif;
     font-size: 36pt;
-    line-height: 36pt;
-    margin-top: 12pt;
-    margin-bottom: 0pt;
+    line-height: 1.2; /* Adjusted for readability */
+    margin-top: 1.5em; /* Increased top margin for separation between axes */
+    margin-bottom: 0.5em; /* Added some bottom margin */
+    text-align: center; /* Center axis titles if desired */
 }
-li {
+li { /* General list item styling if you use lists */
     font-size: 16pt;
     text-indent: 16pt;
 }
-a {
-    font-family: inherit;
-}
-img.center {
+
+img.center { /* For any general centered images, not used in the bar display */
     display: block;
     margin: 1em auto;
     width: 50%;
     min-width: 500pt;
 }
 .button {
-    background-color: #2196f3;
+    background-color: #2196f3; /* Default Fusion blue, or adjust */
     font-family: 'Montserrat', sans-serif;
     border: none;
     border-radius: 8pt;
@@ -94,7 +93,7 @@ img.center {
     text-decoration: none;
     display: block;
     font-size: 24pt;
-    margin: -2px auto;
+    margin: 4px auto; /* Adjusted margin for slightly more space */
     cursor: pointer;
 }
 .small_button, .small_button_off {
@@ -104,13 +103,13 @@ img.center {
     border-radius: 8pt;
     color: white;
     padding: 8pt;
-    width: 10%;
-    min-width: 100pt;
+    width: 10%; /* Consider making this a bit wider if needed */
+    min-width: 120pt; /* Increased min-width */
     text-align: center;
     text-decoration: none;
     display: block;
     font-size: 18pt;
-    margin: -2px auto;
+    margin: 4px auto; /* Adjusted margin */
     cursor: pointer;
 }
 .small_button_off {
@@ -118,137 +117,125 @@ img.center {
     color: #888;
     border: 2px solid #888;
     cursor: not-allowed;
-    margin: -4px auto;
+    margin: 2px auto; /* Adjusted margin to align with border */
 }
+
+/* --- Bar Display Styling --- */
 div.axis {
-    width: 100%;
+    width: 100%; /* Or slightly less if you want margins, e.g., 90% and margin: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1em; /* Add some space below each axis display */
 }
-div.bar {
+div.bar { /* Common styling for all bar segments */
     height: 36pt;
     line-height: 36pt;
     padding: 8pt;
     margin-top: 4pt;
     margin-bottom: 4pt;
-    border-width: 4px;
-    border-right-width: 1px;
+    border-width: 2px; /* Reduced border width for a cleaner look */
     border-top-style: solid;
     border-bottom-style: solid;
-    border-color: #222222;
-    background-color: #eeeeee;
-    display: block;
-    width: 50%;
+    border-color: #222222; /* Darker border for contrast */
+    /* background-color: #eeeeee; Default if not overridden, but will be */
+    display: block; /* Should be flex item if inside .axis which is flex */
+    /* width is set by JS */
 }
-div.text-wrapper {
+div.text-wrapper { /* For the % text inside the bars */
     font-family: 'Montserrat', sans-serif;
-    font-size: 36pt;
+    font-size: 28pt; /* Slightly smaller to fit better */
     line-height: 36pt;
-    color: #222222;
-    display: inline-block;
+    color: #FFFFFF; /* Default to white text for good contrast on colored bars */
+    display: inline-block; /* Allows text to sit within the bar */
+    padding: 0 5px; /* Add some padding around text */
 }
-div.federal {
-    background-color: #ffeb3b;
+
+/* --- Fusion Value Specific Bar Styles --- */
+/* For each value, we define a "positive" (left/high score) and "negative" (right/low score) bar style */
+/* Colors are taken from your fusionValues array in results.html JS */
+
+/* 1. Personal Liberty */
+.bar.liberty-positive {
+    background-color: #ffeb3b; /* yellow */
     text-align: left;
-    border-right-style: solid;
+    border-right-style: solid; /* Creates a dividing line if bars meet */
 }
-div.unitary {
-    background-color: #f44336;
-    text-align: right;
-    border-left-style: solid;
-}
-div.democratic {
-    background-color: #00897b;
-    text-align: left;
-    border-right-style: solid;
-}
-div.authority {
-    background-color: #ff9800;
-    text-align: right;
-    border-left-style: solid;
-}
-div.globalist {
-    background-color: #03a9f4;
-    text-align: left;
-    border-right-style: solid;
-}
-div.isolation {
-    background-color: #9c27b0;
-    text-align: right;
-    border-left-style: solid;
-}
-div.pacifist {
-    background-color: #ea90ab;
-    text-align: right;
-    border-left-style: solid;
-}
-div.militarist {
-    background-color: #8bc34a;
-    text-align: left;
-    border-right-style: solid;
-}
-div.security {
-    background-color: #3f51b5;
-    text-align: left;
-    border-right-style: solid;
-}
-div.freedom {
-    background-color: #ffeb3b;
-    text-align: right;
-    border-left-style: solid;
-}
-div.equality {
-    background-color: #f44336;
-    text-align: left;
-    border-right-style: solid;
-}
-div.markets {
-    background-color: #00897b;
-    text-align: right;
-    border-left-style: solid;
-}
-div.secular {
-    background-color: #ff9800;
-    text-align: left;
-    border-right-style: solid;
-}
-div.religious {
-    background-color: #03a9f4;
-    text-align: right;
-    border-left-style: solid;
-}
-div.progress {
-    background-color: #9c27b0;
-    text-align: left;
-    border-right-style: solid;
-}
-div.tradition {
-    background-color: #8bc34a;
-    text-align: right;
-    border-left-style: solid;
-}
-div.assimilation {
-    background-color: #ea90ab;
-    text-align: left;
-    border-right-style: solid;
-}
-div.multiculture {
-    background-color: #3f51b5;
+.bar.liberty-negative {
+    background-color: #03a9f4; /* blue */
     text-align: right;
     border-left-style: solid;
 }
 
-span.weight-300 {
+/* 2. Advancement */
+.bar.advancement-positive {
+    background-color: #4caf50; /* green */
+    text-align: left;
+    border-right-style: solid;
+}
+.bar.advancement-negative {
+    background-color: #f44336; /* red */
+    text-align: right;
+    border-left-style: solid;
+}
+
+/* 3. Ecological Harmony */
+.bar.harmony-positive {
+    background-color: #8bc34a; /* light green */
+    text-align: left;
+    border-right-style: solid;
+}
+.bar.harmony-negative {
+    background-color: #9c27b0; /* purple */
+    text-align: right;
+    border-left-style: solid;
+}
+
+/* 4. Safety */
+.bar.safety-positive {
+    background-color: #1b5e20; /* dark green */
+    text-align: left;
+    border-right-style: solid;
+}
+.bar.safety-negative {
+    background-color: #b71c1c; /* dark red */
+    text-align: right;
+    border-left-style: solid;
+}
+
+/* 5. Ethical Conduct */
+.bar.ethics-positive {
+    background-color: #00897b; /* teal */
+    text-align: left;
+    border-right-style: solid;
+}
+.bar.ethics-negative {
+    background-color: #ff9800; /* orange */
+    text-align: right;
+    border-left-style: solid;
+}
+
+/* 6. Equity */
+.bar.equity-positive {
+    background-color: #3f51b5; /* indigo */
+    text-align: left;
+    border-right-style: solid;
+}
+.bar.equity-negative {
+    background-color: #ea90ab; /* pink */
+    text-align: right;
+    border-left-style: solid;
+}
+
+
+span.weight-300 { /* For lighter font weight on labels if needed */
     font-weight: 300;
 }
-canvas {
+canvas { /* For the banner image */
     border-color: #444444;
     border-style: solid;
     border-width: 2px;
     border-radius: 8pt;
     display: block;
-    margin: 8pt;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 8pt auto; /* Center canvas */
 }
