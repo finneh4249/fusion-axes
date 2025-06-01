@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<script type="application/javascript" src="ideologies.js"></script>
 <script type="module" src="assets/js/common.js"></script>
+<script type="module" src="ideologies.js"></script>
 <script type="module" src="assets/js/results.js"></script>
 
 <!-- Navigation -->
@@ -73,25 +73,25 @@
         </div>
     </div>
 </div>
-    <img id="img-safety-negative" src="value_images/safety_negative.png" height="128pt"/>
+    <img id="img-safety-negative" src="value_images/safety_negative.png" alt="Safety Negative Illustration" height="128pt"/>
 </div>
 
 <!-- Section for Ethical Conduct -->
 <h2><span class="weight-300" id="value-ethics-label">Ethical Conduct</span></h2>
 <div class="axis">
-    <img id="img-ethics-positive" src="value_images/ethics_positive.png" height="128pt"/>
+    <img id="img-ethics-positive" src="value_images/ethics_positive.png" alt="Ethical Conduct Positive Illustration" height="128pt"/>
     <div class="bar ethics-positive" id="bar-ethics-positive"><div class="text-wrapper" id="ethics-positive"></div></div>
     <div class="bar ethics-negative" id="bar-ethics-negative"><div class="text-wrapper" id="ethics-negative"></div></div>
-    <img id="img-ethics-negative" src="value_images/ethics_negative.png" height="128pt"/>
+    <img id="img-ethics-negative" src="value_images/ethics_negative.png" alt="Ethical Conduct Negative Illustration" height="128pt"/>
 </div>
 
 <!-- Section for Equity -->
 <h2><span class="weight-300" id="value-equity-label">Equity</span></h2>
 <div class="axis">
-    <img id="img-equity-positive" src="value_images/equity_positive.png" height="128pt"/>
+    <img id="img-equity-positive" src="value_images/equity_positive.png" alt="Equity Positive Illustration" height="128pt"/>
     <div class="bar equity-positive" id="bar-equity-positive"><div class="text-wrapper" id="equity-positive"></div></div>
     <div class="bar equity-negative" id="bar-equity-negative"><div class="text-wrapper" id="equity-negative"></div></div>
-    <img id="img-equity-negative" src="value_images/equity_negative.png" height="128pt"/>
+    <img id="img-equity-negative" src="value_images/equity_negative.png" alt="Equity Negative Illustration" height="128pt"/>
 </div>
 
 <br><br>
@@ -109,355 +109,6 @@
 <button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back to Quiz</button> <br>
 <!-- ADD A BUTTON/LINK HERE TO PASS SCORES TO THE AI AGENT FOR HTV -->
 <button class="button" onclick="generateHTV()" style="background-color: #4caf50;">Get My How-To-Vote Suggestion</button> <br>
-
-    // Ensure valueBasedArchetypes is loaded from fusion_ideologies.js
-    // (This script assumes it's globally available)
-
-    function getQueryVariable(variable) {
-           const query = window.location.search.substring(1);
-           const vars = query.split("&");
-           for (let i=0;i<vars.length;i++) {
-                   const pair = vars[i].split("=");
-                   if(decodeURIComponent(pair[0]) == variable) {return decodeURIComponent(pair[1])}
-           }
-           return(NaN); // Return NaN if not found
-    }
-
-    function setBarValue(valueName, score) { // score is 0-100
-        const positiveBar = document.getElementById(`bar-${valueName}-positive`);
-        const negativeBar = document.getElementById(`bar-${valueName}-negative`);
-        const positiveText = document.getElementById(`${valueName}-positive`);
-        const negativeText = document.getElementById(`${valueName}-negative`);
-
-        const positiveScore = score;
-        const negativeScore = 100 - score;
-
-        if (positiveBar) positiveBar.style.width = positiveScore + "%";
-        if (positiveText) {
-            positiveText.innerHTML = positiveScore + "%";
-            // Hide text if bar is too small
-            if (positiveText.offsetWidth + 20 > positiveBar.offsetWidth) {
-                positiveText.style.visibility = "hidden";
-            } else {
-                positiveText.style.visibility = "visible";
-            }
-        }
-        
-        if (negativeBar) negativeBar.style.width = negativeScore + "%";
-        if (negativeText) {
-            negativeText.innerHTML = negativeScore + "%";
-             if (negativeText.offsetWidth + 20 > negativeBar.offsetWidth) {
-                negativeText.style.visibility = "hidden";
-            } else {
-                negativeText.style.visibility = "visible";
-            }
-        }
-    }
-
-    // Define Fusion's 6 Pillars/Values and their corresponding URL parameter names
-    const fusionValues = [
-        { name: "Personal Liberty", id: "liberty", param: "liberty", positiveImg: "liberty_positive.png", negativeImg: "liberty_negative.png", positiveColor: "#ffeb3b", negativeColor: "#03a9f4"},
-        { name: "Advancement", id: "advancement", param: "advance", positiveImg: "advancement_positive.png", negativeImg: "advancement_negative.png", positiveColor: "#4caf50", negativeColor: "#f44336"},
-        { name: "Ecological Harmony", id: "harmony", param: "harmony", positiveImg: "harmony_positive.png", negativeImg: "harmony_negative.png", positiveColor: "#8bc34a", negativeColor: "#9c27b0"},
-        { name: "Safety", id: "safety", param: "safety", positiveImg: "safety_positive.png", negativeImg: "safety_negative.png", positiveColor: "#1b5e20", negativeColor: "#b71c1c"},
-        { name: "Ethical Conduct", id: "ethics", param: "ethics", positiveImg: "ethics_positive.png", negativeImg: "ethics_negative.png", positiveColor: "#00897b", negativeColor: "#ff9800"},
-        { name: "Equity", id: "equity", param: "equity", positiveImg: "equity_positive.png", negativeImg: "equity_negative.png", positiveColor: "#3f51b5", negativeColor: "#ea90ab"}
-    ];
-
-    let userScores = {};
-    fusionValues.forEach(value => {
-        const score = parseFloat(getQueryVariable(value.param));
-        userScores[value.id] = isNaN(score) ? 50 : score; // Default to 50 if param not found
-        setBarValue(value.id, userScores[value.id]);
-        // No need for descriptive labels like "Fanatic X" for Fusion values, the % is enough
-        document.getElementById(`value-${value.id}-label`).innerHTML = `${value.name}: ${userScores[value.id].toFixed(0)}%`;
-    });
-    
-    /**
-     * Calculates similarity between user's scores and an archetype's stats.
-     * Returns an object { difference, similarity (0-100%) }
-     */
-    function calculateSimilarity(userScores, archetypeStats) {
-        let totalDifference = 0;
-        let valueCount = 0;
-        for (const valueKey in archetypeStats) { // Iterate over archetype's defined stats
-            if (userScores.hasOwnProperty(valueKey)) {
-                totalDifference += Math.abs(userScores[valueKey] - archetypeStats[valueKey]);
-                valueCount++;
-            }
-        }
-        if (valueCount === 0) return { difference: Infinity, similarity: 0 }; // Avoid division by zero
-
-        // Max possible difference = number of values * 100 points
-        const maxPossibleDifference = valueCount * 100;
-        let similarityPercentage = (1 - (totalDifference / maxPossibleDifference)) * 100;
-        return { 
-            difference: totalDifference, 
-            similarity: Math.max(0, Math.round(similarityPercentage)) // Ensure similarity isn't negative, round it
-        };
-    }
-
-    let closestArchetype = { name: "Unknown", similarity: -1, description: "" };
-    let fusionMatchStats = {};
-
-    // valueBasedArchetypes should be loaded from fusion_ideologies.js
-    ideologies.forEach(archetype => {
-        const matchStats = calculateSimilarity(userScores, archetype.stats);
-        if (archetype.name === "Fusion Party Alignment") {
-            fusionMatchStats = { ...matchStats, name: archetype.name, description: archetype.description };
-        }
-        // Find the closest OTHER archetype if you want to display that
-        if (matchStats.similarity > closestArchetype.similarity && archetype.name !== "Fusion Party Alignment") {
-            closestArchetype = { name: archetype.name, similarity: matchStats.similarity, description: archetype.description };
-        }
-    });
-    
-    // If Fusion Party Alignment is itself the closest overall, reflect that.
-    if (fusionMatchStats.similarity >= closestArchetype.similarity) {
-        closestArchetype = { name: fusionMatchStats.name, similarity: fusionMatchStats.similarity, description: fusionMatchStats.description };
-    }
-
-
-    document.getElementById("fusion-match-percentage").innerHTML = fusionMatchStats.similarity !== undefined ? fusionMatchStats.similarity.toFixed(0) : "N/A";
-    document.getElementById("fusion-match-description").innerHTML = fusionMatchStats.description || "See how your values align with the Fusion Party's approach.";
-    
-    document.getElementById("archetype-label").innerHTML = closestArchetype.name;
-    document.getElementById("archetype-match-percentage").innerHTML = closestArchetype.similarity !== undefined ? closestArchetype.similarity.toFixed(0) : "N/A";
-    document.getElementById("archetype-match-description").innerHTML = closestArchetype.description || "This archetype represents a general philosophical leaning.";
-
-
-    // --- Canvas Drawing ---
-    window.onload = function() {
-        const c = document.getElementById("banner");
-        const ctx = c.getContext("2d");
-        ctx.fillStyle = "#EEEEEE"; // Background
-        ctx.fillRect(0,0,800,800); // Adjusted height
-
-        const barHeight = 80;
-        const barGap = 40; // Gap between axes
-        const initialY = 70;
-        const imgSize = 100;
-        const barAreaXStart = 120;
-        const barAreaWidth = 560; // Total width for both positive and negative bars        ctx.fillStyle="#222222";
-        ctx.font="700 60px Inter"; // Adjusted font size
-        ctx.textAlign="center";
-        ctx.fillText("Fusion Value Alignment", 400, 50); // Centered title
-
-        fusionValues.forEach((value, index) => {
-            const yPos = initialY + index * (barHeight + barGap);
-            const barYPos = yPos + (imgSize - barHeight) / 2 + 5; // Center bar with image
-            const textYPos = barYPos + barHeight / 2 + 15; // Approx center for text
-
-            // Draw Images (Placeholders - ensure you have these images)
-            let imgPositive = new Image();
-            imgPositive.src = `value_images/${value.positiveImg}`;
-            imgPositive.onload = () => ctx.drawImage(imgPositive, 20, yPos, imgSize, imgSize);
-            
-            let imgNegative = new Image();
-            imgNegative.src = `value_images/${value.negativeImg}`;
-            imgNegative.onload = () => ctx.drawImage(imgNegative, 680, yPos, imgSize, imgSize);
-
-            // Background for bars
-            ctx.fillStyle="#DDDDDD"; // Lighter background for the bar area
-            ctx.fillRect(barAreaXStart, barYPos, barAreaWidth, barHeight);
-
-            // Positive score bar
-            const positiveWidth = (userScores[value.id] / 100) * barAreaWidth;
-            ctx.fillStyle = value.positiveColor;
-            ctx.fillRect(barAreaXStart, barYPos, positiveWidth, barHeight);
-
-            // Negative score bar (fills the rest)
-            const negativeWidth = barAreaWidth - positiveWidth;
-            ctx.fillStyle = value.negativeColor;
-            ctx.fillRect(barAreaXStart + positiveWidth, barYPos, negativeWidth, barHeight);
-            
-            // Text on bars            ctx.fillStyle = "#FFFFFF"; // White text for better contrast on colored bars
-            ctx.font = "bold 30px Inter";
-            ctx.textAlign = "left";
-            if (userScores[value.id] > 15) { // Only draw if bar is wide enough
-                 ctx.fillText(`${userScores[value.id].toFixed(0)}%`, barAreaXStart + 5, textYPos);
-            }
-            ctx.textAlign = "right";
-            if ((100 - userScores[value.id]) > 15) {
-                 ctx.fillText(`${(100 - userScores[value.id]).toFixed(0)}%`, barAreaXStart + barAreaWidth - 5, textYPos);
-            }            // Value Name Label
-            ctx.fillStyle = "#222222";
-            ctx.font = "bold 24px Inter";
-            ctx.textAlign="center";
-            ctx.fillText(value.name, 400, yPos - 5); // Label above the bar
-        });
-
-        // Footer text
-        ctx.font="300 20px Inter";
-        ctx.fillStyle = "#555555";
-        ctx.textAlign="center";
-        ctx.fillText("FusionParty.org.au/values-quiz", 400, 780); // Example footer
-    };
-
-    function generateHTV() {
-        // This function will pass the userScores to your AI agent
-        // For now, let's just alert them or log them
-        let scoresString = "Your Fusion Value Scores:\n";
-        for (const valueId in userScores) {
-            scoresString += `${fusionValues.find(v => v.id === valueId).name}: ${userScores[valueId].toFixed(0)}%\n`;
-        }
-        scoresString += "\n(These scores will be sent to the AI for your How-To-Vote suggestion)";
-        alert(scoresString);
-        console.log(userScores);
-
-        // TODO: Implement the actual call to your AI agent here, passing userScores
-        // e.g., callFusionAIAgentForHTV(userScores, userElectorate);
-        // You'll need to get userElectorate from an input field on this page or a previous one.
-    }
-
-</script>
-
-<script>
-    // Modern results page JavaScript
-    const valueNames = [
-        'Personal Liberty',
-        'Advancement', 
-        'Ecological Harmony',
-        'Safety',
-        'Ethical Conduct',
-        'Equity'
-    ];
-
-    const valueDescriptions = [
-        'Recognising the right of individuals to live their best life and pursue self-actualisation, balanced by safety and ethical conduct.',
-        'A progressive viewpoint valuing continued application of reason, scientific discovery, and innovation to improve quality of life.',
-        'Valuing nature intrinsically beyond its use to humans. An ecomodernist approach to reduce environmental impact while enabling high living standards.',
-        'Ensuring all people are safe from violence and deprivation, including provision of necessities like food, shelter, and healthcare.',
-        'Commitment to honesty, transparency, and good faith in all actions, especially government. Policies must be evidence-based.',
-        'Ensuring every person, regardless of background, has fair access to opportunities and government services.'
-    ];
-
-    const valueColors = [
-        'liberty',
-        'advancement', 
-        'ecology',
-        'safety',
-        'ethics',
-        'equity'
-    ];
-
-    const valueIcons = [
-        '<path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>',
-        '<path d="M13 3l3.293 3.293-7 7-1.586-1.586L13 6.414V3m-2 16v-6h2v6h-2z"/>',
-        '<path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.06.66C6.44 18.45 8.5 12.5 17 10c2.5-.5 4-2 4-4 0-1.5-1.5-3-4-3s-4 1.5-4 3c0 .5.17 1 .5 1.5L17 8z"/>',
-        '<path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10.1V11H16V18H8V11H9.2V10.1C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.5,8.7 10.5,10.1V11H13.5V10.1C13.5,8.7 12.8,8.2 12,8.2Z"/>',
-        '<path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>',
-        '<path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>'
-    ];
-
-    function renderResults() {
-        // Get scores from URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const scores = [];
-        
-        for (let i = 0; i < 6; i++) {
-            const score = parseInt(urlParams.get(`pillar${i}`)) || 0;
-            scores.push(score);
-        }
-
-        // Calculate percentages (assuming max possible score is around 100)
-        const maxScore = Math.max(...scores.map(Math.abs));
-        const normalizedScores = scores.map(score => {
-            const percentage = maxScore > 0 ? Math.abs(score) / maxScore * 100 : 0;
-            return Math.min(100, Math.max(0, percentage));
-        });
-
-        // Render results grid
-        const resultsGrid = document.getElementById('results-grid');
-        resultsGrid.innerHTML = '';
-
-        scores.forEach((score, index) => {
-            const percentage = normalizedScores[index];
-            const resultCard = createResultCard(
-                valueNames[index],
-                valueDescriptions[index],
-                score,
-                percentage,
-                valueColors[index],
-                valueIcons[index]
-            );
-            resultsGrid.appendChild(resultCard);
-        });
-
-        // Animate bars after rendering
-        setTimeout(() => {
-            document.querySelectorAll('.result-bar-fill').forEach(bar => {
-                bar.style.width = bar.dataset.width;
-            });
-        }, 500);
-    }
-
-    function createResultCard(name, description, score, percentage, colorClass, iconPath) {
-        const card = document.createElement('div');
-        card.className = `result-card ${colorClass}`;
-        
-        card.innerHTML = `
-            <div class="result-header">
-                <div class="result-icon ${colorClass}">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        ${iconPath}
-                    </svg>
-                </div>
-                <div class="result-value-name">${name}</div>
-            </div>
-            
-            <div class="result-score ${colorClass}">${score > 0 ? '+' : ''}${score}</div>
-            
-            <div class="result-bar">
-                <div class="result-bar-fill ${colorClass}" data-width="${percentage}%" style="width: 0%;"></div>
-            </div>
-            
-            <p class="result-description">${description}</p>
-        `;
-        
-        return card;
-    }
-
-    function showVotingRecommendations() {
-        // Create modal or new section with voting recommendations
-        alert('Voting recommendations feature would be implemented here based on your specific alignment scores.');
-    }
-
-    function startAIDiscussion() {
-        // Launch AI discussion interface
-        alert('AI discussion feature would be implemented here to explore your results further.');
-    }
-
-    function shareResults() {
-        // Create shareable link or image
-        const url = window.location.href;
-        if (navigator.share) {
-            navigator.share({
-                title: 'My Fusion Party Value Alignment Results',
-                text: 'Check out my political value alignment results!',
-                url: url
-            });
-        } else {
-            // Fallback for browsers without Web Share API
-            navigator.clipboard.writeText(url).then(() => {
-                alert('Results link copied to clipboard!');
-            });
-        }
-    }
-
-    // Initialize results when page loads
-    document.addEventListener('DOMContentLoaded', function() {
-        renderResults();
-        
-        // Add fade-in animation
-        document.body.style.opacity = '0';
-        document.body.style.transition = 'opacity 0.5s ease';
-        
-        setTimeout(() => {
-            document.body.style.opacity = '1';
-        }, 100);
-    });
-</script>
 
 <!-- Footer -->
 <footer class="footer">

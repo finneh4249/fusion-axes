@@ -8,8 +8,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<script type="application/javascript" src="questions.js"></script>
 <script type="module" src="assets/js/common.js"></script>
+<script type="module" src="questions.js"></script>
 <script type="module" src="assets/js/quiz.js"></script>
 
 <!-- Navigation -->
@@ -29,36 +29,42 @@
 <div class="quiz-container">
     <div class="quiz-header">
         <h1 class="results-title">Value Alignment Assessment</h1>
-        <div class="quiz-progress">
+        <div class="quiz-progress"
+             role="progressbar"
+             id="quiz-progress-bar-container"
+             aria-label="Quiz Progress"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-valuenow="0">
             <div class="quiz-progress-bar" id="progress-bar" style="width: 0%;"></div>
         </div>
-        <div class="question-number" id="question-number">Loading...</div>
+        <div class="question-number" id="question-number" aria-live="polite">Loading...</div>
     </div>
     
     <div class="question-container">
-        <p class="question-text" id="question-text">Loading question...</p>
+        <p class="question-text" id="question-text" aria-live="polite">Loading question...</p>
     </div>
     
     <div class="answer-buttons">
-        <button class="button answer-button strongly-agree" onclick="answer_question(2)">
+        <button class="button answer-button strongly-agree" data-value="2">
             <span>Strongly Agree</span>
         </button>
-        <button class="button answer-button agree" onclick="answer_question(1)">
+        <button class="button answer-button agree" data-value="1">
             <span>Agree</span>
         </button>
-        <button class="button answer-button neutral" onclick="answer_question(0)">
+        <button class="button answer-button neutral" data-value="0">
             <span>Neutral/Unsure</span>
         </button>
-        <button class="button answer-button disagree" onclick="answer_question(-1)">
+        <button class="button answer-button disagree" data-value="-1">
             <span>Disagree</span>
         </button>
-        <button class="button answer-button strongly-disagree" onclick="answer_question(-2)">
+        <button class="button answer-button strongly-disagree" data-value="-2">
             <span>Strongly Disagree</span>
         </button>
     </div>
     
     <div class="quiz-navigation">
-        <button class="small_button nav-button" onclick="prev_question()" id="back_button">← Previous</button>
+        <button class="small_button nav-button" id="back_button">← Previous</button>
         <button class="small_button_off nav-button" id="back_button_off" disabled>← Previous</button>    </div>
 </div>
 
