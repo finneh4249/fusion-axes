@@ -1,50 +1,53 @@
 /* --- General Site Styles --- */
 html {
-    background-color: #EAEAEA; /* Lighter grey, closer to Fusion's #949494 if too dark */
+    background-color: #EAEAEA;
     padding: 0px;
+    font-size: 16px; /* Base font size for REM units */
 }
 body {
-    width: 85%; /* Slightly wider */
+    width: 90%; /* Allow more width on larger screens */
+    max-width: 1200px; /* Max width for very large screens */
     min-height: calc(100vh - 4em);
     margin: 0 auto;
-    padding: 2em;
-    background-color: #FFFFFF; /* White background, common for clean look */
-    border-color: #5EFFD8; /* Fusion Aqua for border accent */
+    padding: 1em; /* Reduced padding for smaller screens */
+    background-color: #FFFFFF;
+    border-color: #5EFFD8;
     border-left-style: solid;
     border-right-style: solid;
-    border-width: 15px; /* Thinner border */
-    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    border-width: 10px; /* Slightly thinner border */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 p, li {
-    color: #333333; /* Darker grey for better readability */
+    color: #333333;
     font-family: 'Roboto', sans-serif;
-    font-size: 16pt;
-    line-height: 1.5; /* Increased line height */
-    margin: 8pt 4pt; /* More vertical spacing */
+    font-size: 1rem; /* Use REM for responsive font sizing */
+    line-height: 1.6; /* Slightly more line height */
+    margin: 0.5rem 0.25rem; /* Use REM */
 }
 a {
-    color: #3D4DCB; /* Fusion Dark Blue for links */
+    color: #3D4DCB;
     font-family: inherit;
-    text-decoration: none; /* Remove underline by default */
+    text-decoration: none;
 }
 a:hover {
-    color: #5FACFF; /* Fusion Light Blue for hover */
+    color: #5FACFF;
     text-decoration: underline;
 }
 
 /* --- Quiz Specific Elements --- */
 p.question {
-    margin: 20pt auto;
-    color: #010102; /* Fusion Black for question text */
+    margin: 1.5rem auto; /* Use REM */
+    color: #010102;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400; /* Normal weight */
-    width: 75%;
-    min-width: 450pt;
-    background-color: #F8F8F8; /* Very light grey background for question box */
-    padding: 20pt;
-    border-radius: 8pt; /* Softer radius */
-    border: 1px solid #DDDDDD; /* Subtle border */
-    font-size: 32pt; /* Slightly smaller for potentially longer questions */
+    font-weight: 400;
+    width: 90%; /* More responsive width */
+    max-width: 700px; /* Max width for readability */
+    min-height: 10rem; /* Use REM, ensure enough space for text */
+    background-color: #F8F8F8;
+    padding: 1.5rem; /* Use REM */
+    border-radius: 8pt;
+    border: 1px solid #DDDDDD;
+    font-size: 1.8rem; /* Responsive font size, potentially adjust with media queries */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,173 +55,254 @@ p.question {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 h1 { /* Main Page Title */
-    color: #010102; /* Fusion Black */
+    color: #010102;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 700; /* Bold */
-    font-size: 60pt; /* Adjusted size */
+    font-weight: 700;
+    font-size: 3rem; /* Responsive font size */
     text-align: center;
     line-height: 1.1;
     margin-top: 0pt;
     margin-bottom: 0.5em;
 }
-.ideology h2, .results-section h2 { /* Subheadings on results page */
-    color: #010102; /* Fusion Black */
+.ideology h2, .results-section h2, h2#question-number { /* Subheadings on results page & question counter */
+    color: #010102;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 30pt; /* Adjusted size */
+    font-size: 1.8rem; /* Responsive */
     line-height: 1.2;
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin-top: 1.2em;
+    margin-bottom: 0.6em;
     text-align: center;
 }
-h2#question-number { /* "Question X of Y" */
-    color: #333333;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24pt;
+h2#question-number { /* "Question X of Y" specific */
     font-weight: 300; /* Lighter weight */
-    line-height: 1.2;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
-    text-align: center;
+    font-size: 1.5rem; /* Slightly smaller */
 }
+
 
 /* --- Buttons --- */
 .button { /* Answer buttons */
-    background-color: #3D4DCB; /* Fusion Dark Blue */
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     border: none;
-    border-radius: 6pt;
+    border-radius: 8px; /* Consistent unit */
     color: white;
-    padding: 10pt 12pt;
-    width: 60%;
-    min-width: 400pt;
+    padding: 1rem 1.2rem; /* Increased padding, REM unit */
+    width: 80%; /* Responsive width */
+    max-width: 600px; /* Max width for buttons */
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 20pt; /* Adjusted */
-    margin: 5px auto;
+    font-size: 1.25rem; /* Responsive font size */
+    margin: 0.5rem auto; /* REM unit */
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    min-height: 48px; /* Minimum touch target height */
+}
+.button:active { /* Visual feedback on tap */
+    transform: translateY(1px);
 }
 .button:hover {
-    background-color: #5FACFF; /* Fusion Light Blue for hover */
+    /* Hover states are defined by specific color overrides below */
 }
-/* Specific button styling from original can be layered if needed for agree/disagree colors */
-button.button[onclick*="answer_question(2)"] { background-color: #008C65; } /* Fusion Dark Green for Strongly Agree */
+
+/* Specific button styling for agree/disagree spectrum */
+button.button[onclick*="answer_question(2)"] { background-color: #008C65; } 
 button.button[onclick*="answer_question(2)"]:hover { background-color: #00B084; }
-button.button[onclick*="answer_question(1)"] { background-color: #5EFFD8; color:#010102; } /* Fusion Aqua for Agree - needs dark text */
+button.button[onclick*="answer_question(1)"] { background-color: #5EFFD8; color:#010102; } 
 button.button[onclick*="answer_question(1)"]:hover { background-color: #8BFFEE; }
-button.button[onclick*="answer_question(0)"] { background-color: #949494; } /* Fusion Grey for Neutral */
+button.button[onclick*="answer_question(0)"] { background-color: #949494; } 
 button.button[onclick*="answer_question(0)"]:hover { background-color: #A9A9A9; }
-button.button[onclick*="answer_question(-1)"] { background-color: #EC3F42; } /* Fusion Red for Disagree */
+button.button[onclick*="answer_question(-1)"] { background-color: #EC3F42; } 
 button.button[onclick*="answer_question(-1)"]:hover { background-color: #F06F71; }
-button.button[onclick*="answer_question(-2)"] { background-color: #91313D; } /* Fusion Maroon for Strongly Disagree */
+button.button[onclick*="answer_question(-2)"] { background-color: #91313D; } 
 button.button[onclick*="answer_question(-2)"]:hover { background-color: #B04D5A; }
 
 
 .small_button, .small_button_off { /* Back, Next, Results buttons */
-    background-color: #010102; /* Fusion Black */
+    background-color: #010102;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     border: none;
-    border-radius: 6pt;
+    border-radius: 6px;
     color: white;
-    padding: 8pt 10pt;
-    width: auto; /* Auto width based on content */
-    min-width: 100pt;
+    padding: 0.75rem 1rem; /* REM units */
+    width: auto; 
+    min-width: 120px; /* Min width */
     text-align: center;
     text-decoration: none;
-    display: inline-block; /* For side-by-side placement if needed */
-    font-size: 16pt; /* Adjusted */
-    margin: 10px 5px; /* More margin */
+    display: inline-block; 
+    font-size: 1rem; /* REM units */
+    margin: 0.75rem 0.25rem; /* REM units */
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    min-height: 44px; /* Minimum touch target */
+}
+.small_button:active {
+    transform: translateY(1px);
 }
 .small_button:hover {
-    background-color: #333333; /* Darker grey */
+    background-color: #333333;
 }
 .small_button_off {
-    background-color: #COCOCO; /* Lighter grey for disabled */
+    background-color: #COCOCO; 
     color: #666666;
-    border: 1px solid #949494; /* Fusion Grey border */
+    border: 1px solid #949494;
     cursor: not-allowed;
 }
 
 /* --- Bar Display Styling on Results Page --- */
 div.axis {
-    width: 90%; /* Give some breathing room */
-    margin: 0 auto 2em auto; /* Centered with bottom margin */
+    width: 95%; /* More responsive */
+    max-width: 800px; /* Max width for axis display */
+    margin: 0 auto 2rem auto; /* Centered with bottom margin */
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: nowrap; /* Ensure images and bar stay in line */
 }
 div.axis img {
-    flex-shrink: 0; /* Prevent images from shrinking */
-    margin: 0 10px; /* Space around images */
+    flex-shrink: 0; 
+    margin: 0 0.5rem; /* REM units */
+    height: 64px; /* Smaller images for mobile, adjust with media query if needed */
+    width: 64px; /* Maintain aspect ratio or set explicitly */
 }
-div.bar-container { /* New container for the two bars */
+div.bar-container { 
     display: flex;
-    flex-grow: 1; /* Allow it to take available space */
-    height: 48pt; /* Increased height */
-    border: 2px solid #010102; /* Fusion Black border around the combined bar */
-    border-radius: 4pt;
-    overflow: hidden; /* Ensures rounded corners clip inner bars */
+    flex-grow: 1; 
+    height: 3rem; /* REM units */
+    border: 2px solid #010102; 
+    border-radius: 4px;
+    overflow: hidden; 
 }
-div.bar { /* Common styling for bar segments */
-    /* height is now controlled by bar-container */
-    line-height: 48pt; /* Match container height */
-    padding: 0 8pt; /* Padding for text inside */
-    /* border-width removed, border is on container now */
-    display: flex; /* To help center text if needed, though text-align used */
+div.bar { 
+    line-height: 3rem; /* Match container height */
+    padding: 0 0.5rem; /* REM units */
+    display: flex; 
     align-items: center;
-    /* width is set by JS */
 }
 div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 20pt; /* Adjusted for new bar height */
-    color: #FFFFFF; /* White text on colored bars */
-    /* display: inline-block; Already flex item */
+    font-size: 1.1rem; /* REM units, adjust based on bar height */
+    color: #FFFFFF; 
+    padding: 0 0.25rem; /* REM units */
 }
 
-/* --- Fusion Value Specific Bar Styles --- */
-/* Positive = High score, Negative = Low score (opposing concept) */
-
-/* 1. Personal Liberty */
-.bar.liberty-positive { background-color: #5FACFF; text-align: left; } /* Light Blue */
-.bar.liberty-negative { background-color: #505060; text-align: right; } /* Darker contrasting grey */
-
-/* 2. Advancement */
-.bar.advancement-positive { background-color: #91313D; text-align: left; } /* Maroon */
-.bar.advancement-negative { background-color: #D3A0A8; text-align: right; } /* Muted pink/grey */
-
-/* 3. Ecological Harmony */
-.bar.harmony-positive { background-color: #008C65; text-align: left; } /* Dark Green */
-.bar.harmony-negative { background-color: #866C60; text-align: right; } /* Brown/Taupe */
-
-/* 4. Safety */
-.bar.safety-positive { background-color: #3D4DCB; text-align: left; } /* Dark Blue */
-.bar.safety-negative { background-color: #EC3F42; text-align: right; } /* Fusion Red for danger */
-
-/* 5. Ethical Governance */
-.bar.ethics-positive { background-color: #98A7C6; text-align: left; color: #010102;} /* Slate Blue, needs dark text */
-.bar.ethics-negative { background-color: #606070; text-align: right; } /* Murky grey */
-
-/* 6. Equity */
-.bar.equity-positive { background-color: #D9B487; text-align: left; color: #010102;} /* Tan/Beige, needs dark text */
-.bar.equity-negative { background-color: #707070; text-align: right; } /* Darker grey for inequality */
-
+/* Specific Value Bar Styles (colors remain the same) */
+.bar.liberty-positive { background-color: #5FACFF; text-align: left; } 
+.bar.liberty-negative { background-color: #505060; text-align: right; } 
+.bar.advancement-positive { background-color: #91313D; text-align: left; } 
+.bar.advancement-negative { background-color: #D3A0A8; text-align: right; } 
+.bar.harmony-positive { background-color: #008C65; text-align: left; } 
+.bar.harmony-negative { background-color: #866C60; text-align: right; } 
+.bar.safety-positive { background-color: #3D4DCB; text-align: left; } 
+.bar.safety-negative { background-color: #EC3F42; text-align: right; } 
+.bar.ethics-positive { background-color: #98A7C6; text-align: left; color: #010102;} 
+.bar.ethics-negative { background-color: #606070; text-align: right; } 
+.bar.equity-positive { background-color: #D9B487; text-align: left; color: #010102;} 
+.bar.equity-negative { background-color: #707070; text-align: right; } 
 
 span.weight-300 {
     font-weight: 300;
 }
-canvas#banner { /* For the results summary banner */
-    border-color: #010102; /* Fusion Black */
+canvas#banner { 
+    border-color: #010102; 
     border-style: solid;
-    border-width: 1px; /* Thinner border */
-    border-radius: 6pt;
+    border-width: 1px; 
+    border-radius: 6px;
     display: block;
-    margin: 20pt auto;
-    background-color: #F8F8F8; /* Light background for canvas */
+    margin: 1.5rem auto; /* REM units */
+    background-color: #F8F8F8; 
+    max-width: 100%; /* Ensure canvas scales down */
+    height: auto; /* Maintain aspect ratio if width is constrained */
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) { /* Tablets and large phones */
+    body {
+        width: 95%;
+        padding: 0.5em;
+        border-width: 5px;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .ideology h2, .results-section h2, h2#question-number {
+        font-size: 1.5rem;
+    }
+    h2#question-number {
+        font-size: 1.2rem;
+    }
+    p.question {
+        font-size: 1.5rem; /* Smaller font for questions on mobile */
+        min-height: 8rem;
+        padding: 1rem;
+        width: 95%;
+    }
+    .button {
+        font-size: 1.1rem;
+        width: 90%;
+        padding: 0.8rem 1rem;
+    }
+    .small_button, .small_button_off {
+        font-size: 0.9rem;
+        padding: 0.6rem 0.8rem;
+        min-width: 100px;
+    }
+    div.axis img {
+        height: 48px; /* Smaller images on smaller screens */
+        width: 48px;
+        margin: 0 0.25rem;
+    }
+    div.bar-container {
+        height: 2.5rem;
+    }
+    div.bar {
+        line-height: 2.5rem;
+    }
+    div.text-wrapper {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) { /* Smaller phones */
+    h1 {
+        font-size: 2rem;
+    }
+    .ideology h2, .results-section h2, h2#question-number {
+        font-size: 1.2rem;
+    }
+     h2#question-number {
+        font-size: 1rem;
+    }
+    p.question {
+        font-size: 1.2rem;
+        min-height: 7rem;
+    }
+    .button {
+        font-size: 1rem;
+        padding: 0.7rem 0.9rem;
+    }
+    .small_button, .small_button_off {
+        display: block; /* Stack small buttons on very small screens */
+        width: 60%;
+        margin: 0.5rem auto;
+    }
+    div.axis {
+        /* Could consider flex-direction: column for images on very small screens if needed */
+    }
+    div.axis img {
+        height: 32px;
+        width: 32px;
+    }
+    div.bar-container {
+        height: 2rem;
+    }
+    div.bar {
+        line-height: 2rem;
+    }
+    div.text-wrapper {
+        font-size: 0.75rem;
+    }
 }
