@@ -1,334 +1,296 @@
 <head>
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:400,700" rel="stylesheet">
 <link href='style.css' rel='stylesheet' type='text/css'>
-<title>9Axes Results</title>
+<title>Fusion Party Value Alignment Results</title> <!-- CHANGED -->
 <link rel="icon" type="x-icon" href="icon.png">
 <link rel="shortcut icon" type="x-icon" href="icon.png">
 <meta charset="utf-8">
 </head>
-<script type="application/javascript" src="ideologies.js">
-</script>
+<!-- Ensure your archetypes are in fusion_ideologies.js -->
+<script type="application/javascript" src="fusion_ideologies.js"></script> 
 
 <body>
-<h1>9Axes</h1>
+<h1>Fusion Party Value Alignment</h1> <!-- CHANGED -->
 <hr>
 
-<h1>Results</h1>
+<h1>Your Results</h1>
 
-<h2><span class="weight-300" id="a-label"></span></h2>
+<!-- Section for Personal Liberty -->
+<h2><span class="weight-300" id="value-liberty-label">Personal Liberty</span></h2>
 <div class="axis">
-    <img id="img-federal" src="value_images/federal.png" height="128pt"/>
-    <div class="bar federal" id="bar-federal"><div class="text-wrapper" id="federal"></div></div>
-    <div class="bar unitary" id="bar-unitary"><div class="text-wrapper" id="unitary"></div></div>
-    <img id="img-unitary" src="value_images/unitary.png" height="128pt"/>
+    <img id="img-liberty-positive" src="value_images/liberty_positive.png" height="128pt"/> <!-- Placeholder image -->
+    <div class="bar liberty-positive" id="bar-liberty-positive"><div class="text-wrapper" id="liberty-positive"></div></div>
+    <div class="bar liberty-negative" id="bar-liberty-negative"><div class="text-wrapper" id="liberty-negative"></div></div>
+    <img id="img-liberty-negative" src="value_images/liberty_negative.png" height="128pt"/> <!-- Placeholder image -->
 </div>
-<h2><span class="weight-300" id="b-label"></span></h2>
+
+<!-- Section for Advancement -->
+<h2><span class="weight-300" id="value-advancement-label">Advancement</span></h2>
 <div class="axis">
-    <img id="img-democratic" src="value_images/democracy.png" height="128pt"/>
-    <div class="bar democratic" id="bar-democratic"><div class="text-wrapper" id="democratic"></div></div>
-    <div class="bar authority" id="bar-authority"><div class="text-wrapper" id="authority"></div></div>
-    <img id="img-authority" src="value_images/authority.png" height="128pt"/>
+    <img id="img-advancement-positive" src="value_images/advancement_positive.png" height="128pt"/>
+    <div class="bar advancement-positive" id="bar-advancement-positive"><div class="text-wrapper" id="advancement-positive"></div></div>
+    <div class="bar advancement-negative" id="bar-advancement-negative"><div class="text-wrapper" id="advancement-negative"></div></div>
+    <img id="img-advancement-negative" src="value_images/advancement_negative.png" height="128pt"/>
 </div>
-<h2><span class="weight-300" id="c-label"></span></h2>
+
+<!-- Section for Ecological Harmony -->
+<h2><span class="weight-300" id="value-harmony-label">Ecological Harmony</span></h2>
 <div class="axis">
-    <img id="img-globalist" src="value_images/globalist.png" height="128pt"/>
-    <div class="bar globalist" id="bar-globalist"><div class="text-wrapper" id="globalist"></div></div>
-    <div class="bar isolation" id="bar-isolation"><div class="text-wrapper" id="isolation"></div></div>
-    <img id="img-isolation" src="value_images/isolationist.png" height="128pt"/>
+    <img id="img-harmony-positive" src="value_images/harmony_positive.png" height="128pt"/>
+    <div class="bar harmony-positive" id="bar-harmony-positive"><div class="text-wrapper" id="harmony-positive"></div></div>
+    <div class="bar harmony-negative" id="bar-harmony-negative"><div class="text-wrapper" id="harmony-negative"></div></div>
+    <img id="img-harmony-negative" src="value_images/harmony_negative.png" height="128pt"/>
 </div>
-<h2><span class="weight-300" id="d-label"></span></h2>
+
+<!-- Section for Safety -->
+<h2><span class="weight-300" id="value-safety-label">Safety</span></h2>
 <div class="axis">
-    <img id="img-militarist" src="value_images/militarist.png" height="128pt"/>
-    <div class="bar militarist" id="bar-militarist"><div class="text-wrapper" id="militarist"></div></div>
-    <div class="bar pacifist" id="bar-pacifist"><div class="text-wrapper" id="pacifist"></div></div>
-    <img id="img-pacifist" src="value_images/pacifist.png" height="128pt"/>
+    <img id="img-safety-positive" src="value_images/safety_positive.png" height="128pt"/>
+    <div class="bar safety-positive" id="bar-safety-positive"><div class="text-wrapper" id="safety-positive"></div></div>
+    <div class="bar safety-negative" id="bar-safety-negative"><div class="text-wrapper" id="safety-negative"></div></div>
+    <img id="img-safety-negative" src="value_images/safety_negative.png" height="128pt"/>
 </div>
-<h2><span class="weight-300" id="e-label"></span></h2>
+
+<!-- Section for Ethical Conduct -->
+<h2><span class="weight-300" id="value-ethics-label">Ethical Conduct</span></h2>
 <div class="axis">
-    <img id="img-security" src="value_images/security.png" height="128pt"/>
-    <div class="bar security" id="bar-security"><div class="text-wrapper" id="security"></div></div>
-    <div class="bar freedom" id="bar-freedom"><div class="text-wrapper" id="freedom"></div></div>
-    <img id="img-freedom" src="value_images/freedom.png" height="128pt"/>
+    <img id="img-ethics-positive" src="value_images/ethics_positive.png" height="128pt"/>
+    <div class="bar ethics-positive" id="bar-ethics-positive"><div class="text-wrapper" id="ethics-positive"></div></div>
+    <div class="bar ethics-negative" id="bar-ethics-negative"><div class="text-wrapper" id="ethics-negative"></div></div>
+    <img id="img-ethics-negative" src="value_images/ethics_negative.png" height="128pt"/>
 </div>
-<h2><span class="weight-300" id="f-label"></span></h2>
+
+<!-- Section for Equity -->
+<h2><span class="weight-300" id="value-equity-label">Equity</span></h2>
 <div class="axis">
-    <img id="img-equality" src="value_images/equality.png" height="128pt"/>
-    <div class="bar equality" id="bar-equality"><div class="text-wrapper" id="equality"></div></div>
-    <div class="bar markets" id="bar-markets"><div class="text-wrapper" id="markets"></div></div>
-    <img id="img-markets" src="value_images/markets.png" height="128pt"/>
-</div>
-<h2><span class="weight-300" id="g-label"></span></h2>
-<div class="axis">
-    <img id="img-secular" src="value_images/secular.png" height="128pt"/>
-    <div class="bar secular" id="bar-secular"><div class="text-wrapper" id="secular"></div></div>
-    <div class="bar religious" id="bar-religious"><div class="text-wrapper" id="religious"></div></div>
-    <img id="img-religious" src="value_images/religious.png" height="128pt"/>
-</div>
-<h2><span class="weight-300" id="h-label"></span></h2>
-<div class="axis">
-    <img id="img-progress" src="value_images/progress.png" height="128pt"/>
-    <div class="bar progress" id="bar-progress"><div class="text-wrapper" id="progress"></div></div>
-    <div class="bar tradition" id="bar-tradition"><div class="text-wrapper" id="tradition"></div></div>
-    <img id="img-tradition" src="value_images/tradition.png" height="128pt"/>
-</div>
-<h2><span class="weight-300" id="i-label"></span></h2>
-<div class="axis">
-    <img id="img-assimilation" src="value_images/assimilationist.png" height="128pt"/>
-    <div class="bar assimilation" id="bar-assimilation"><div class="text-wrapper" id="assimilation"></div></div>
-    <div class="bar multiculture" id="bar-multiculture"><div class="text-wrapper" id="multiculture"></div></div>
-    <img id="img-multiculture" src="value_images/multiculturalist.png" height="128pt"/>
+    <img id="img-equity-positive" src="value_images/equity_positive.png" height="128pt"/>
+    <div class="bar equity-positive" id="bar-equity-positive"><div class="text-wrapper" id="equity-positive"></div></div>
+    <div class="bar equity-negative" id="bar-equity-negative"><div class="text-wrapper" id="equity-negative"></div></div>
+    <img id="img-equity-negative" src="value_images/equity_negative.png" height="128pt"/>
 </div>
 
 <br><br>
 
-<h2 class="ideology">Closest Match: <span class="weight-300" id="ideology-label"></span></h1>
-<p class="ideology">Your 8values ideology (see https://8values.github.io for more information)</p>
-<p class="ideology">Please note this does only factor the Democratic-Authoritarian, Globalist-Isolationist, Equality-Markets, and Progressive-Traditional axes.</p>
+<h2 class="ideology">Fusion Party Alignment: <span class="weight-300" id="fusion-match-percentage"></span>%</h1>
+<p class="ideology" id="fusion-match-description"></p>
+
+<h2 class="ideology">Closest Archetype Match: <span class="weight-300" id="archetype-label"></span> (<span class="weight-300" id="archetype-match-percentage"></span>% Similar)</h2>
+<p class="ideology" id="archetype-match-description"></p>
+<!-- You might add a link here to a page explaining the archetypes or Fusion's values in more detail -->
 
 <br><br>
 
-<canvas id="banner" width=800 height=1200 style="font-family:Montserrat"></canvas>
-<button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back</button> <br>
+<canvas id="banner" width=800 height=800 style="font-family:Montserrat"></canvas> <!-- Adjusted height for 6 axes -->
+<button class="button" onclick="location.href='index.html';" style="background-color: #2196f3;">Back to Quiz</button> <br>
+<!-- ADD A BUTTON/LINK HERE TO PASS SCORES TO THE AI AGENT FOR HTV -->
+<button class="button" onclick="generateHTV()" style="background-color: #4caf50;">Get My How-To-Vote Suggestion</button> <br>
+
+
 <script>
-    function getQueryVariable(variable)
-    {
-           var query = window.location.search.substring(1)
-           var vars = query.split("&")
-           for (var i=0;i<vars.length;i++) {
-                   var pair = vars[i].split("=")
-                   if(pair[0] == variable) {return pair[1]}
+    // Ensure valueBasedArchetypes is loaded from fusion_ideologies.js
+    // (This script assumes it's globally available)
+
+    function getQueryVariable(variable) {
+           const query = window.location.search.substring(1);
+           const vars = query.split("&");
+           for (let i=0;i<vars.length;i++) {
+                   const pair = vars[i].split("=");
+                   if(decodeURIComponent(pair[0]) == variable) {return decodeURIComponent(pair[1])}
            }
-           return(NaN);
+           return(NaN); // Return NaN if not found
     }
 
-    function setBarValue(name, value) {
-        innerel = document.getElementById(name)
-        outerel = document.getElementById("bar-" + name)
-        outerel.style.width = (value + "%")
-        innerel.innerHTML = (value + "%")
-        if (innerel.offsetWidth + 20 > outerel.offsetWidth) {
-            innerel.style.visibility = "hidden"
+    function setBarValue(valueName, score) { // score is 0-100
+        const positiveBar = document.getElementById(`bar-${valueName}-positive`);
+        const negativeBar = document.getElementById(`bar-${valueName}-negative`);
+        const positiveText = document.getElementById(`${valueName}-positive`);
+        const negativeText = document.getElementById(`${valueName}-negative`);
+
+        const positiveScore = score;
+        const negativeScore = 100 - score;
+
+        if (positiveBar) positiveBar.style.width = positiveScore + "%";
+        if (positiveText) {
+            positiveText.innerHTML = positiveScore + "%";
+            // Hide text if bar is too small
+            if (positiveText.offsetWidth + 20 > positiveBar.offsetWidth) {
+                positiveText.style.visibility = "hidden";
+            } else {
+                positiveText.style.visibility = "visible";
+            }
+        }
+        
+        if (negativeBar) negativeBar.style.width = negativeScore + "%";
+        if (negativeText) {
+            negativeText.innerHTML = negativeScore + "%";
+             if (negativeText.offsetWidth + 20 > negativeBar.offsetWidth) {
+                negativeText.style.visibility = "hidden";
+            } else {
+                negativeText.style.visibility = "visible";
+            }
         }
     }
 
-    leftArray = ["Federal","Democratic","Globalist","Militarist","Security","Equality","Secular","Progressive","Assimilationist"]
-    rightArray = ["Unitary","Authoritarian","Isolationist","Pacifist","Freedom","Markets","Religious","Traditional","Multiculturalist"]
+    // Define Fusion's 6 Pillars/Values and their corresponding URL parameter names
+    const fusionValues = [
+        { name: "Personal Liberty", id: "liberty", param: "liberty", positiveImg: "liberty_positive.png", negativeImg: "liberty_negative.png", positiveColor: "#ffeb3b", negativeColor: "#03a9f4"},
+        { name: "Advancement", id: "advancement", param: "advance", positiveImg: "advancement_positive.png", negativeImg: "advancement_negative.png", positiveColor: "#4caf50", negativeColor: "#f44336"},
+        { name: "Ecological Harmony", id: "harmony", param: "harmony", positiveImg: "harmony_positive.png", negativeImg: "harmony_negative.png", positiveColor: "#8bc34a", negativeColor: "#9c27b0"},
+        { name: "Safety", id: "safety", param: "safety", positiveImg: "safety_positive.png", negativeImg: "safety_negative.png", positiveColor: "#1b5e20", negativeColor: "#b71c1c"},
+        { name: "Ethical Conduct", id: "ethics", param: "ethics", positiveImg: "ethics_positive.png", negativeImg: "ethics_negative.png", positiveColor: "#00897b", negativeColor: "#ff9800"},
+        { name: "Equity", id: "equity", param: "equity", positiveImg: "equity_positive.png", negativeImg: "equity_negative.png", positiveColor: "#3f51b5", negativeColor: "#ea90ab"}
+    ];
 
-    function setLabel(val,axis) {
-        if (val >= 90) { return "Fanatic " + leftArray[axis] } else
-        if (val >= 80) { return "Extreme " + leftArray[axis] } else
-        if (val >= 70) { return leftArray[axis] } else
-        if (val >= 60) { return "Moderate " + leftArray[axis] } else
-        if (val > 40) { return "Neutral" } else
-        if (val > 30) { return "Moderate " + rightArray[axis] } else
-        if (val > 20) { return rightArray[axis] } else
-        if (val > 10) { return "Extreme " + rightArray[axis] } else
-        	{return "Fanatic " + rightArray[axis]}
-    }
-
-    a  = getQueryVariable("a")
-    b  = getQueryVariable("b")
-    c  = getQueryVariable("c")
-    d  = getQueryVariable("d")
-    e  = getQueryVariable("e")
-    f  = getQueryVariable("f")
-    g  = getQueryVariable("g")
-    h  = getQueryVariable("h")
-    i1  = getQueryVariable("i")
-    a2 = 100-a;
-    b2 = 100-b;
-    c2 = 100-c;
-    d2 = 100-d;
-    e2 = 100-e;
-    f2 = 100-f;
-    g2 = 100-g;
-    h2 = 100-h;
-    i2 = 100-i1;
-
-    setBarValue("federal", a)
-    setBarValue("unitary", a2)
-    setBarValue("democratic", b)
-    setBarValue("authority", b2)
-    setBarValue("globalist", c)
-    setBarValue("isolation", c2)
-    setBarValue("militarist", d)
-    setBarValue("pacifist", d2)
-    setBarValue("security", e)
-    setBarValue("freedom", e2)
-    setBarValue("equality", f)
-    setBarValue("markets", f2)
-    setBarValue("secular", g)
-    setBarValue("religious", g2)
-    setBarValue("progress", h)
-    setBarValue("tradition", h2)
-    setBarValue("assimilation", i1)
-    setBarValue("multiculture", i2)
+    let userScores = {};
+    fusionValues.forEach(value => {
+        const score = parseFloat(getQueryVariable(value.param));
+        userScores[value.id] = isNaN(score) ? 50 : score; // Default to 50 if param not found
+        setBarValue(value.id, userScores[value.id]);
+        // No need for descriptive labels like "Fanatic X" for Fusion values, the % is enough
+        document.getElementById(`value-${value.id}-label`).innerHTML = `${value.name}: ${userScores[value.id].toFixed(0)}%`;
+    });
     
-
-    document.getElementById("a-label").innerHTML = setLabel(a, 0)
-    document.getElementById("b-label").innerHTML = setLabel(b, 1)
-    document.getElementById("c-label").innerHTML = setLabel(c, 2)
-    document.getElementById("d-label").innerHTML = setLabel(d, 3)
-    document.getElementById("e-label").innerHTML = setLabel(e, 4)
-    document.getElementById("f-label").innerHTML = setLabel(f, 5)
-    document.getElementById("g-label").innerHTML = setLabel(g, 6)
-    document.getElementById("h-label").innerHTML = setLabel(h, 7)
-    document.getElementById("i-label").innerHTML = setLabel(i1, 8)
-
-    ideology = ""
-    ideodist = Infinity
-    for (var i = 0; i < ideologies.length; i++) {
-        dist = 0
-        dist += Math.pow(Math.abs(ideologies[i].stats.econ - f), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.govt - b), 2)
-        dist += Math.pow(Math.abs(ideologies[i].stats.dipl - c), 1.73856063)
-        dist += Math.pow(Math.abs(ideologies[i].stats.scty - h), 1.73856063)
-        if (dist < ideodist) {
-            ideology = ideologies[i].name
-            ideodist = dist
+    /**
+     * Calculates similarity between user's scores and an archetype's stats.
+     * Returns an object { difference, similarity (0-100%) }
+     */
+    function calculateSimilarity(userScores, archetypeStats) {
+        let totalDifference = 0;
+        let valueCount = 0;
+        for (const valueKey in archetypeStats) { // Iterate over archetype's defined stats
+            if (userScores.hasOwnProperty(valueKey)) {
+                totalDifference += Math.abs(userScores[valueKey] - archetypeStats[valueKey]);
+                valueCount++;
+            }
         }
+        if (valueCount === 0) return { difference: Infinity, similarity: 0 }; // Avoid division by zero
+
+        // Max possible difference = number of values * 100 points
+        const maxPossibleDifference = valueCount * 100;
+        let similarityPercentage = (1 - (totalDifference / maxPossibleDifference)) * 100;
+        return { 
+            difference: totalDifference, 
+            similarity: Math.max(0, Math.round(similarityPercentage)) // Ensure similarity isn't negative, round it
+        };
     }
+
+    let closestArchetype = { name: "Unknown", similarity: -1, description: "" };
+    let fusionMatchStats = {};
+
+    // valueBasedArchetypes should be loaded from fusion_ideologies.js
+    valueBasedArchetypes.forEach(archetype => {
+        const matchStats = calculateSimilarity(userScores, archetype.stats);
+        if (archetype.name === "Fusion Party Alignment") {
+            fusionMatchStats = { ...matchStats, name: archetype.name, description: archetype.description };
+        }
+        // Find the closest OTHER archetype if you want to display that
+        if (matchStats.similarity > closestArchetype.similarity && archetype.name !== "Fusion Party Alignment") {
+            closestArchetype = { name: archetype.name, similarity: matchStats.similarity, description: archetype.description };
+        }
+    });
     
-    document.getElementById("ideology-label").innerHTML = ideology
-
-    function createImage(src, x, y, w, h) {
-        img = new Image ()
-        img.src = src
-        img.onLoad = function() {
-            ctx.drawImage(img, x, y, w, h)
-        }
+    // If Fusion Party Alignment is itself the closest overall, reflect that.
+    if (fusionMatchStats.similarity >= closestArchetype.similarity) {
+        closestArchetype = { name: fusionMatchStats.name, similarity: fusionMatchStats.similarity, description: fusionMatchStats.description };
     }
 
+
+    document.getElementById("fusion-match-percentage").innerHTML = fusionMatchStats.similarity !== undefined ? fusionMatchStats.similarity.toFixed(0) : "N/A";
+    document.getElementById("fusion-match-description").innerHTML = fusionMatchStats.description || "See how your values align with the Fusion Party's approach.";
+    
+    document.getElementById("archetype-label").innerHTML = closestArchetype.name;
+    document.getElementById("archetype-match-percentage").innerHTML = closestArchetype.similarity !== undefined ? closestArchetype.similarity.toFixed(0) : "N/A";
+    document.getElementById("archetype-match-description").innerHTML = closestArchetype.description || "This archetype represents a general philosophical leaning.";
+
+
+    // --- Canvas Drawing ---
     window.onload = function() {
-        var c = document.getElementById("banner")
-        var ctx = c.getContext("2d")
-        ctx.fillStyle = "#EEEEEE"
-        ctx.fillRect(0,0,800,1200)
+        const c = document.getElementById("banner");
+        const ctx = c.getContext("2d");
+        ctx.fillStyle = "#EEEEEE"; // Background
+        ctx.fillRect(0,0,800,800); // Adjusted height
 
-        img = document.getElementById("img-federal")
-        ctx.drawImage(img, 20, 120, 100, 100);
-        img = document.getElementById("img-unitary")
-        ctx.drawImage(img, 680, 120, 100, 100)
-        img = document.getElementById("img-democratic")
-        ctx.drawImage(img, 20, 240, 100, 100)
-        img = document.getElementById("img-authority")
-        ctx.drawImage(img, 680, 240, 100, 100)
-        img = document.getElementById("img-globalist")
-        ctx.drawImage(img, 20, 360, 100, 100)
-        img = document.getElementById("img-isolation")
-        ctx.drawImage(img, 680, 360, 100, 100)
-        img = document.getElementById("img-militarist")
-        ctx.drawImage(img, 20, 480, 100, 100)
-        img = document.getElementById("img-pacifist")
-        ctx.drawImage(img, 680, 480, 100, 100)
-        img = document.getElementById("img-security")
-        ctx.drawImage(img, 20, 600, 100, 100)
-        img = document.getElementById("img-freedom")
-        ctx.drawImage(img, 680, 600, 100, 100)
-        img = document.getElementById("img-equality")
-        ctx.drawImage(img, 20, 720, 100, 100)
-        img = document.getElementById("img-markets")
-        ctx.drawImage(img, 680, 720, 100, 100)
-        img = document.getElementById("img-secular")
-        ctx.drawImage(img, 20, 840, 100, 100)
-        img = document.getElementById("img-religious")
-        ctx.drawImage(img, 680, 840, 100, 100)
-        img = document.getElementById("img-progress")
-        ctx.drawImage(img, 20, 960, 100, 100)
-        img = document.getElementById("img-tradition")
-        ctx.drawImage(img, 680, 960, 100, 100)
-        img = document.getElementById("img-assimilation")
-        ctx.drawImage(img, 20, 1080, 100, 100)
-        img = document.getElementById("img-multiculture")
-        ctx.drawImage(img, 680, 1080, 100, 100)
+        const barHeight = 80;
+        const barGap = 40; // Gap between axes
+        const initialY = 70;
+        const imgSize = 100;
+        const barAreaXStart = 120;
+        const barAreaWidth = 560; // Total width for both positive and negative bars
 
-        ctx.fillStyle="#222222"
-        ctx.fillRect(120, 130, 560, 80)
-        ctx.fillRect(120, 250, 560, 80)
-        ctx.fillRect(120, 370, 560, 80)
-        ctx.fillRect(120, 490, 560, 80)
-        ctx.fillRect(120, 610, 560, 80)
-        ctx.fillRect(120, 730, 560, 80)
-        ctx.fillRect(120, 850, 560, 80)
-        ctx.fillRect(120, 970, 560, 80)
-        ctx.fillRect(120, 1090, 560, 80)
-        ctx.fillStyle="#ffeb3b"
-        ctx.fillRect(120, 134, 5.6*a-2, 72)
-        ctx.fillStyle="#f44336"
-        ctx.fillRect(682-5.6*a2, 134, 5.6*a2-2, 72)
-        ctx.fillStyle="#00897b"
-        ctx.fillRect(120, 254, 5.6*b-2, 72)
-        ctx.fillStyle="#ff9800"
-        ctx.fillRect(682-5.6*b2, 254, 5.6*b2-2, 72)
-        ctx.fillStyle="#03a9f4"
-        ctx.fillRect(120, 374, 5.6*(100-c2)-2, 72)
-        ctx.fillStyle="#9c27b0"
-        ctx.fillRect(682-5.6*c2, 374, 5.6*c2-2, 72)
-        ctx.fillStyle="#8bc34a" 
-        ctx.fillRect(120, 494, 5.6*d-2, 72)
-        ctx.fillStyle="#ea90ab"
-        ctx.fillRect(682-5.6*d2, 494, 5.6*d2-2, 72)
-        ctx.fillStyle="#3f51b5"
-        ctx.fillRect(120, 614, 5.6*e-2, 72)
-        ctx.fillStyle="#ffeb3b"
-        ctx.fillRect(682-5.6*e2, 614, 5.6*e2-2, 72)
-        ctx.fillStyle="#f44336"
-        ctx.fillRect(120, 734, 5.6*f-2, 72)
-        ctx.fillStyle="#00897b"
-        ctx.fillRect(682-5.6*f2, 734, 5.6*f2-2, 72)
-        ctx.fillStyle="#ff9800"
-        ctx.fillRect(120, 854, 5.6*g-2, 72)
-        ctx.fillStyle="#03a9f4"
-        ctx.fillRect(682-5.6*g2, 854, 5.6*g2-2, 72)
-        ctx.fillStyle="#9c27b0" 
-        ctx.fillRect(120, 974, 5.6*h-2, 72)
-        ctx.fillStyle="#8bc34a"
-        ctx.fillRect(682-5.6*h2, 974, 5.6*h2-2, 72)
-        ctx.fillStyle="#ea90ab"
-        ctx.fillRect(120, 1094, 5.6*i1-2, 72)
-        ctx.fillStyle="#3f51b5" 
-        ctx.fillRect(682-5.6*i2, 1094, 5.6*i2-2, 72)
-        ctx.fillStyle="#222222"
-        ctx.font="700 80px Montserrat"
-        ctx.textAlign="left"
-        ctx.fillText("9Axes", 20, 90)
-        ctx.font="40px Montserrat"
-        ctx.textAlign="right"
+        ctx.fillStyle="#222222";
+        ctx.font="700 60px Montserrat"; // Adjusted font size
+        ctx.textAlign="center";
+        ctx.fillText("Fusion Value Alignment", 400, 50); // Centered title
 
-        ctx.font="50px Montserrat"
-        ctx.textAlign="left"
-        if (a  > 20) {ctx.fillText(a + "%", 130, 187.5)}
-        if (b     > 20) {ctx.fillText(b + "%", 130, 307.5)}
-        if ((100-c2)   > 20) {ctx.fillText((100-c2) + "%", 130, 427.5)}
-        if (d > 20) {ctx.fillText(d + "%", 130, 547.5)}
-        if (e  > 20) {ctx.fillText(e + "%", 130, 667.5)}
-        if (f > 20) {ctx.fillText(f + "%", 130, 787.5)}
-        if (g  > 20) {ctx.fillText(g + "%", 130, 907.5)}
-        if (h > 20) {ctx.fillText(h + "%", 130, 1027.5)}
-        if (i1  > 20) {ctx.fillText(i1 + "%", 130, 1147.5)}
-        ctx.textAlign="right"
-        if (a2    > 20) {ctx.fillText(a2 + "%", 670, 187.5)}
-        if (b2     > 20) {ctx.fillText(b2 + "%", 670, 307.5)}
-        if (c2 > 20) {ctx.fillText(c2 + "%", 670, 427.5)}
-        if (d2  > 20) {ctx.fillText(d2 + "%", 670, 547.5)}
-        if (e2    > 20) {ctx.fillText(e2 + "%", 670, 667.5)}
-        if (f2     > 20) {ctx.fillText(f2 + "%", 670, 787.5)}
-        if (g2 > 20) {ctx.fillText(g2 + "%", 670, 907.5)}
-        if (h2  > 20) {ctx.fillText(h2 + "%", 670, 1027.5)}
-        if (i2  > 20) {ctx.fillText(i2 + "%", 670, 1147.5)}
+        fusionValues.forEach((value, index) => {
+            const yPos = initialY + index * (barHeight + barGap);
+            const barYPos = yPos + (imgSize - barHeight) / 2 + 5; // Center bar with image
+            const textYPos = barYPos + barHeight / 2 + 15; // Approx center for text
 
-        ctx.font="300 30px Montserrat"
-        ctx.fillText("9Axes.github.io", 780, 55)
-        ctx.textAlign="center"
-        ctx.fillText(document.getElementById("a-label").innerHTML, 400, 125)
-        ctx.fillText(document.getElementById("b-label").innerHTML, 400, 245)
-        ctx.fillText(document.getElementById("c-label").innerHTML, 400, 365)
-        ctx.fillText(document.getElementById("d-label").innerHTML, 400, 485)
-        ctx.fillText(document.getElementById("e-label").innerHTML, 400, 605)
-        ctx.fillText(document.getElementById("f-label").innerHTML, 400, 725)
-        ctx.fillText(document.getElementById("g-label").innerHTML, 400, 845)
-        ctx.fillText(document.getElementById("h-label").innerHTML, 400, 965)
-        ctx.fillText(document.getElementById("i-label").innerHTML, 400, 1085)
+            // Draw Images (Placeholders - ensure you have these images)
+            let imgPositive = new Image();
+            imgPositive.src = `value_images/${value.positiveImg}`;
+            imgPositive.onload = () => ctx.drawImage(imgPositive, 20, yPos, imgSize, imgSize);
+            
+            let imgNegative = new Image();
+            imgNegative.src = `value_images/${value.negativeImg}`;
+            imgNegative.onload = () => ctx.drawImage(imgNegative, 680, yPos, imgSize, imgSize);
+
+            // Background for bars
+            ctx.fillStyle="#DDDDDD"; // Lighter background for the bar area
+            ctx.fillRect(barAreaXStart, barYPos, barAreaWidth, barHeight);
+
+            // Positive score bar
+            const positiveWidth = (userScores[value.id] / 100) * barAreaWidth;
+            ctx.fillStyle = value.positiveColor;
+            ctx.fillRect(barAreaXStart, barYPos, positiveWidth, barHeight);
+
+            // Negative score bar (fills the rest)
+            const negativeWidth = barAreaWidth - positiveWidth;
+            ctx.fillStyle = value.negativeColor;
+            ctx.fillRect(barAreaXStart + positiveWidth, barYPos, negativeWidth, barHeight);
+            
+            // Text on bars
+            ctx.fillStyle = "#FFFFFF"; // White text for better contrast on colored bars
+            ctx.font = "bold 30px Montserrat";
+            ctx.textAlign = "left";
+            if (userScores[value.id] > 15) { // Only draw if bar is wide enough
+                 ctx.fillText(`${userScores[value.id].toFixed(0)}%`, barAreaXStart + 5, textYPos);
+            }
+            ctx.textAlign = "right";
+            if ((100 - userScores[value.id]) > 15) {
+                 ctx.fillText(`${(100 - userScores[value.id]).toFixed(0)}%`, barAreaXStart + barAreaWidth - 5, textYPos);
+            }
+
+            // Value Name Label
+            ctx.fillStyle = "#222222";
+            ctx.font = "bold 24px Montserrat";
+            ctx.textAlign="center";
+            ctx.fillText(value.name, 400, yPos - 5); // Label above the bar
+        });
+
+        // Footer text
+        ctx.font="300 20px Montserrat";
+        ctx.fillStyle = "#555555";
+        ctx.textAlign="center";
+        ctx.fillText("FusionParty.org.au/values-quiz", 400, 780); // Example footer
+    };
+
+    function generateHTV() {
+        // This function will pass the userScores to your AI agent
+        // For now, let's just alert them or log them
+        let scoresString = "Your Fusion Value Scores:\n";
+        for (const valueId in userScores) {
+            scoresString += `${fusionValues.find(v => v.id === valueId).name}: ${userScores[valueId].toFixed(0)}%\n`;
+        }
+        scoresString += "\n(These scores will be sent to the AI for your How-To-Vote suggestion)";
+        alert(scoresString);
+        console.log(userScores);
+
+        // TODO: Implement the actual call to your AI agent here, passing userScores
+        // e.g., callFusionAIAgentForHTV(userScores, userElectorate);
+        // You'll need to get userElectorate from an input field on this page or a previous one.
     }
-    </script>
+
+</script>
 </body>
