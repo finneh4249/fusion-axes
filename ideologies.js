@@ -1,4 +1,4 @@
-const ideologies = [
+export const ideologies = [
     {
         "name": "Fusion Party Alignment",
         "description": "This profile reflects a strong alignment with the Fusion Party's core values and their balanced, evidence-based approach to policy.",

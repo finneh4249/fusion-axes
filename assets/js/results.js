@@ -259,21 +259,29 @@ export class ResultsManager {
      * Setup event listeners for interactive elements
      */
     setupEventListeners() {
-        // Back to quiz button
-        const backButton = document.querySelector('button[onclick*="index.html"]');
-        if (backButton) {
-            backButton.addEventListener('click', () => {
-                window.location.href = 'index.html';
-            });
-        }
-
-        // How-to-vote button
-        const htvButton = document.querySelector('button[onclick*="generateHTV"]');
-        if (htvButton) {
-            htvButton.addEventListener('click', () => this.generateHTV());
-        }
+        EventUtils.addEventListener('show-voting-recommendations-button', 'click', () => this.showVotingRecommendations());
+        EventUtils.addEventListener('start-ai-discussion-button', 'click', () => this.startAIDiscussion());
+        EventUtils.addEventListener('share-results-button', 'click', () => this.shareResults());
+        EventUtils.addEventListener('back-to-quiz-button', 'click', () => {
+            window.location.href = 'index.html';
+        });
+        EventUtils.addEventListener('generate-htv-button', 'click', () => this.generateHTV());
     }
 
+    /**
+     * Show voting recommendations (placeholder)
+     */
+    showVotingRecommendations() {
+        alert('Voting recommendations feature would be implemented here based on your specific alignment scores.');
+    }
+
+    /**
+     * Start AI discussion (placeholder)
+     */
+    startAIDiscussion() {
+        alert('AI discussion feature would be implemented here to explore your results further.');
+    }
+    
     /**
      * Generate How-To-Vote suggestions
      */
@@ -356,26 +364,10 @@ export class ResultsManager {
     }
 }
 
-// Create global results manager instance
-let resultsManager;
-
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    resultsManager = new ResultsManager();
+    new ResultsManager();
 });
-
-// Global functions for backward compatibility
-window.generateHTV = () => {
-    if (resultsManager) {
-        resultsManager.generateHTV();
-    }
-};
-
-window.shareResults = () => {
-    if (resultsManager) {
-        resultsManager.shareResults();
-    }
-};
 
 // Export for module use
 export default ResultsManager;
