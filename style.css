@@ -1,241 +1,224 @@
+/* --- General Site Styles --- */
 html {
-    background-color: #bbbbbb;
+    background-color: #EAEAEA; /* Lighter grey, closer to Fusion's #949494 if too dark */
     padding: 0px;
 }
 body {
-    width: 80%;
+    width: 85%; /* Slightly wider */
     min-height: calc(100vh - 4em);
     margin: 0 auto;
     padding: 2em;
-    background-color: #dddddd;
-    border-color: #eeeeee;
+    background-color: #FFFFFF; /* White background, common for clean look */
+    border-color: #5EFFD8; /* Fusion Aqua for border accent */
     border-left-style: solid;
     border-right-style: solid;
-    border-width: 20px;
+    border-width: 15px; /* Thinner border */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Subtle shadow for depth */
 }
 p, li {
-    color: #444444;
+    color: #333333; /* Darker grey for better readability */
     font-family: 'Roboto', sans-serif;
     font-size: 16pt;
-    line-height: 1;
-    margin: 4pt;
+    line-height: 1.5; /* Increased line height */
+    margin: 8pt 4pt; /* More vertical spacing */
 }
 a {
-    color: #2222DD;
-    font-family: inherit; /* Ensure links inherit font */
+    color: #3D4DCB; /* Fusion Dark Blue for links */
+    font-family: inherit;
+    text-decoration: none; /* Remove underline by default */
 }
 a:hover {
-    color: #22DDDD;
+    color: #5FACFF; /* Fusion Light Blue for hover */
+    text-decoration: underline;
 }
-p.value-description { /* This class might be useful for explaining values on results page */
-    text-indent: -16pt;
-    margin-left: 20pt;
-}
+
+/* --- Quiz Specific Elements --- */
 p.question {
-    margin: 16pt auto;
-    color: #333333;
+    margin: 20pt auto;
+    color: #010102; /* Fusion Black for question text */
     font-family: 'Montserrat', sans-serif;
-    font-weight: normal;
-    width: 70%;
-    min-width: 500pt;
-    min-height: 144pt; /* Or adjust as needed for your question length */
-    background-color: #eeeeee;
-    padding: 16pt;
-    border-radius: 16pt;
-    font-size: 36pt;
+    font-weight: 400; /* Normal weight */
+    width: 75%;
+    min-width: 450pt;
+    background-color: #F8F8F8; /* Very light grey background for question box */
+    padding: 20pt;
+    border-radius: 8pt; /* Softer radius */
+    border: 1px solid #DDDDDD; /* Subtle border */
+    font-size: 32pt; /* Slightly smaller for potentially longer questions */
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
-h1 {
-    color: #222222;
+h1 { /* Main Page Title */
+    color: #010102; /* Fusion Black */
     font-family: 'Montserrat', sans-serif;
-    font-size: 72pt; /* Consider if slightly smaller for "Fusion Party Value Alignment" */
+    font-weight: 700; /* Bold */
+    font-size: 60pt; /* Adjusted size */
     text-align: center;
-    line-height: 1; /* Adjusted for better spacing */
+    line-height: 1.1;
     margin-top: 0pt;
-    margin-bottom: 0.2em; /* Added some bottom margin */
+    margin-bottom: 0.5em;
 }
-.ideology { /* For "Closest Match" text sections */
+.ideology h2, .results-section h2 { /* Subheadings on results page */
+    color: #010102; /* Fusion Black */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 30pt; /* Adjusted size */
+    line-height: 1.2;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
     text-align: center;
 }
-h2 {
+h2#question-number { /* "Question X of Y" */
     color: #333333;
     font-family: 'Montserrat', sans-serif;
-    font-size: 36pt;
-    line-height: 1.2; /* Adjusted for readability */
-    margin-top: 1.5em; /* Increased top margin for separation between axes */
-    margin-bottom: 0.5em; /* Added some bottom margin */
-    text-align: center; /* Center axis titles if desired */
-}
-li { /* General list item styling if you use lists */
-    font-size: 16pt;
-    text-indent: 16pt;
+    font-size: 24pt;
+    font-weight: 300; /* Lighter weight */
+    line-height: 1.2;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    text-align: center;
 }
 
-img.center { /* For any general centered images, not used in the bar display */
-    display: block;
-    margin: 1em auto;
-    width: 50%;
-    min-width: 500pt;
-}
-.button {
-    background-color: #2196f3; /* Default Fusion blue, or adjust */
+/* --- Buttons --- */
+.button { /* Answer buttons */
+    background-color: #3D4DCB; /* Fusion Dark Blue */
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     border: none;
-    border-radius: 8pt;
+    border-radius: 6pt;
     color: white;
-    padding: 8pt;
-    width: 50%;
-    min-width: 500pt;
+    padding: 10pt 12pt;
+    width: 60%;
+    min-width: 400pt;
     text-align: center;
     text-decoration: none;
     display: block;
-    font-size: 24pt;
-    margin: 4px auto; /* Adjusted margin for slightly more space */
+    font-size: 20pt; /* Adjusted */
+    margin: 5px auto;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
-.small_button, .small_button_off {
-    background-color: #333;
+.button:hover {
+    background-color: #5FACFF; /* Fusion Light Blue for hover */
+}
+/* Specific button styling from original can be layered if needed for agree/disagree colors */
+button.button[onclick*="answer_question(2)"] { background-color: #008C65; } /* Fusion Dark Green for Strongly Agree */
+button.button[onclick*="answer_question(2)"]:hover { background-color: #00B084; }
+button.button[onclick*="answer_question(1)"] { background-color: #5EFFD8; color:#010102; } /* Fusion Aqua for Agree - needs dark text */
+button.button[onclick*="answer_question(1)"]:hover { background-color: #8BFFEE; }
+button.button[onclick*="answer_question(0)"] { background-color: #949494; } /* Fusion Grey for Neutral */
+button.button[onclick*="answer_question(0)"]:hover { background-color: #A9A9A9; }
+button.button[onclick*="answer_question(-1)"] { background-color: #EC3F42; } /* Fusion Red for Disagree */
+button.button[onclick*="answer_question(-1)"]:hover { background-color: #F06F71; }
+button.button[onclick*="answer_question(-2)"] { background-color: #91313D; } /* Fusion Maroon for Strongly Disagree */
+button.button[onclick*="answer_question(-2)"]:hover { background-color: #B04D5A; }
+
+
+.small_button, .small_button_off { /* Back, Next, Results buttons */
+    background-color: #010102; /* Fusion Black */
     font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     border: none;
-    border-radius: 8pt;
+    border-radius: 6pt;
     color: white;
-    padding: 8pt;
-    width: 10%; /* Consider making this a bit wider if needed */
-    min-width: 120pt; /* Increased min-width */
+    padding: 8pt 10pt;
+    width: auto; /* Auto width based on content */
+    min-width: 100pt;
     text-align: center;
     text-decoration: none;
-    display: block;
-    font-size: 18pt;
-    margin: 4px auto; /* Adjusted margin */
+    display: inline-block; /* For side-by-side placement if needed */
+    font-size: 16pt; /* Adjusted */
+    margin: 10px 5px; /* More margin */
     cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.small_button:hover {
+    background-color: #333333; /* Darker grey */
 }
 .small_button_off {
-    background-color: #ddd;
-    color: #888;
-    border: 2px solid #888;
+    background-color: #COCOCO; /* Lighter grey for disabled */
+    color: #666666;
+    border: 1px solid #949494; /* Fusion Grey border */
     cursor: not-allowed;
-    margin: 2px auto; /* Adjusted margin to align with border */
 }
 
-/* --- Bar Display Styling --- */
+/* --- Bar Display Styling on Results Page --- */
 div.axis {
-    width: 100%; /* Or slightly less if you want margins, e.g., 90% and margin: auto; */
+    width: 90%; /* Give some breathing room */
+    margin: 0 auto 2em auto; /* Centered with bottom margin */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1em; /* Add some space below each axis display */
 }
-div.bar { /* Common styling for all bar segments */
-    height: 36pt;
-    line-height: 36pt;
-    padding: 8pt;
-    margin-top: 4pt;
-    margin-bottom: 4pt;
-    border-width: 2px; /* Reduced border width for a cleaner look */
-    border-top-style: solid;
-    border-bottom-style: solid;
-    border-color: #222222; /* Darker border for contrast */
-    /* background-color: #eeeeee; Default if not overridden, but will be */
-    display: block; /* Should be flex item if inside .axis which is flex */
+div.axis img {
+    flex-shrink: 0; /* Prevent images from shrinking */
+    margin: 0 10px; /* Space around images */
+}
+div.bar-container { /* New container for the two bars */
+    display: flex;
+    flex-grow: 1; /* Allow it to take available space */
+    height: 48pt; /* Increased height */
+    border: 2px solid #010102; /* Fusion Black border around the combined bar */
+    border-radius: 4pt;
+    overflow: hidden; /* Ensures rounded corners clip inner bars */
+}
+div.bar { /* Common styling for bar segments */
+    /* height is now controlled by bar-container */
+    line-height: 48pt; /* Match container height */
+    padding: 0 8pt; /* Padding for text inside */
+    /* border-width removed, border is on container now */
+    display: flex; /* To help center text if needed, though text-align used */
+    align-items: center;
     /* width is set by JS */
 }
-div.text-wrapper { /* For the % text inside the bars */
+div.text-wrapper {
     font-family: 'Montserrat', sans-serif;
-    font-size: 28pt; /* Slightly smaller to fit better */
-    line-height: 36pt;
-    color: #FFFFFF; /* Default to white text for good contrast on colored bars */
-    display: inline-block; /* Allows text to sit within the bar */
-    padding: 0 5px; /* Add some padding around text */
+    font-weight: 700;
+    font-size: 20pt; /* Adjusted for new bar height */
+    color: #FFFFFF; /* White text on colored bars */
+    /* display: inline-block; Already flex item */
 }
 
 /* --- Fusion Value Specific Bar Styles --- */
-/* For each value, we define a "positive" (left/high score) and "negative" (right/low score) bar style */
-/* Colors are taken from your fusionValues array in results.html JS */
+/* Positive = High score, Negative = Low score (opposing concept) */
 
 /* 1. Personal Liberty */
-.bar.liberty-positive {
-    background-color: #ffeb3b; /* yellow */
-    text-align: left;
-    border-right-style: solid; /* Creates a dividing line if bars meet */
-}
-.bar.liberty-negative {
-    background-color: #03a9f4; /* blue */
-    text-align: right;
-    border-left-style: solid;
-}
+.bar.liberty-positive { background-color: #5FACFF; text-align: left; } /* Light Blue */
+.bar.liberty-negative { background-color: #505060; text-align: right; } /* Darker contrasting grey */
 
 /* 2. Advancement */
-.bar.advancement-positive {
-    background-color: #4caf50; /* green */
-    text-align: left;
-    border-right-style: solid;
-}
-.bar.advancement-negative {
-    background-color: #f44336; /* red */
-    text-align: right;
-    border-left-style: solid;
-}
+.bar.advancement-positive { background-color: #91313D; text-align: left; } /* Maroon */
+.bar.advancement-negative { background-color: #D3A0A8; text-align: right; } /* Muted pink/grey */
 
 /* 3. Ecological Harmony */
-.bar.harmony-positive {
-    background-color: #8bc34a; /* light green */
-    text-align: left;
-    border-right-style: solid;
-}
-.bar.harmony-negative {
-    background-color: #9c27b0; /* purple */
-    text-align: right;
-    border-left-style: solid;
-}
+.bar.harmony-positive { background-color: #008C65; text-align: left; } /* Dark Green */
+.bar.harmony-negative { background-color: #866C60; text-align: right; } /* Brown/Taupe */
 
 /* 4. Safety */
-.bar.safety-positive {
-    background-color: #1b5e20; /* dark green */
-    text-align: left;
-    border-right-style: solid;
-}
-.bar.safety-negative {
-    background-color: #b71c1c; /* dark red */
-    text-align: right;
-    border-left-style: solid;
-}
+.bar.safety-positive { background-color: #3D4DCB; text-align: left; } /* Dark Blue */
+.bar.safety-negative { background-color: #EC3F42; text-align: right; } /* Fusion Red for danger */
 
-/* 5. Ethical Conduct */
-.bar.ethics-positive {
-    background-color: #00897b; /* teal */
-    text-align: left;
-    border-right-style: solid;
-}
-.bar.ethics-negative {
-    background-color: #ff9800; /* orange */
-    text-align: right;
-    border-left-style: solid;
-}
+/* 5. Ethical Governance */
+.bar.ethics-positive { background-color: #98A7C6; text-align: left; color: #010102;} /* Slate Blue, needs dark text */
+.bar.ethics-negative { background-color: #606070; text-align: right; } /* Murky grey */
 
 /* 6. Equity */
-.bar.equity-positive {
-    background-color: #3f51b5; /* indigo */
-    text-align: left;
-    border-right-style: solid;
-}
-.bar.equity-negative {
-    background-color: #ea90ab; /* pink */
-    text-align: right;
-    border-left-style: solid;
-}
+.bar.equity-positive { background-color: #D9B487; text-align: left; color: #010102;} /* Tan/Beige, needs dark text */
+.bar.equity-negative { background-color: #707070; text-align: right; } /* Darker grey for inequality */
 
 
-span.weight-300 { /* For lighter font weight on labels if needed */
+span.weight-300 {
     font-weight: 300;
 }
-canvas { /* For the banner image */
-    border-color: #444444;
+canvas#banner { /* For the results summary banner */
+    border-color: #010102; /* Fusion Black */
     border-style: solid;
-    border-width: 2px;
-    border-radius: 8pt;
+    border-width: 1px; /* Thinner border */
+    border-radius: 6pt;
     display: block;
-    margin: 8pt auto; /* Center canvas */
+    margin: 20pt auto;
+    background-color: #F8F8F8; /* Light background for canvas */
 }
