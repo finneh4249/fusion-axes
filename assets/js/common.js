@@ -208,7 +208,3 @@ export class EventUtils {
     }
 }
 
-// Make functions globally available for backward compatibility with inline handlers
-window.QuizUtils = QuizUtils;
-window.DOMUtils = DOMUtils;
-window.EventUtils = EventUtils;

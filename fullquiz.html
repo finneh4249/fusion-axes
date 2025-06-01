@@ -10,8 +10,8 @@
     <link href="assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body class="quiz-page">
-    <script type="application/javascript" src="questions.js"></script>
     <script type="module" src="assets/js/common.js"></script>
+    <script type="module" src="questions.js"></script>
     <script type="module" src="assets/js/fullquiz.js"></script>
     <!-- Navigation -->
     <nav class="navbar">
@@ -52,23 +52,23 @@
 
             <!-- Answer Options -->
             <div class="answer-options">
-                <button class="answer-btn strongly-agree" onclick="answer_question(2)" data-value="2">
+                <button class="answer-btn strongly-agree" data-value="2">
                     <span class="answer-icon">👍</span>
                     <span class="answer-text">Strongly Agree</span>
                 </button>
-                <button class="answer-btn agree" onclick="answer_question(1)" data-value="1">
+                <button class="answer-btn agree" data-value="1">
                     <span class="answer-icon">✓</span>
                     <span class="answer-text">Agree</span>
                 </button>
-                <button class="answer-btn neutral" onclick="answer_question(0)" data-value="0">
+                <button class="answer-btn neutral" data-value="0">
                     <span class="answer-icon">○</span>
                     <span class="answer-text">Neutral/Unsure</span>
                 </button>
-                <button class="answer-btn disagree" onclick="answer_question(-1)" data-value="-1">
+                <button class="answer-btn disagree" data-value="-1">
                     <span class="answer-icon">✗</span>
                     <span class="answer-text">Disagree</span>
                 </button>
-                <button class="answer-btn strongly-disagree" onclick="answer_question(-2)" data-value="-2">
+                <button class="answer-btn strongly-disagree" data-value="-2">
                     <span class="answer-icon">👎</span>
                     <span class="answer-text">Strongly Disagree</span>
                 </button>
@@ -76,7 +76,7 @@
 
             <!-- Navigation -->
             <div class="quiz-navigation">
-                <button class="nav-btn prev-btn" onclick="prev_question()" id="back_button">
+                <button class="nav-btn prev-btn" id="back_button">
                     ← Previous Question
                 </button>
                 <button class="nav-btn prev-btn disabled" id="back_button_off" disabled>
