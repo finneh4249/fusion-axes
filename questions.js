@@ -1,4 +1,4 @@
-questions = [
+export const questions = [
     [// Pillar 1: Personal Liberty
         [//+4 (Strongest Fusion Alignment)
             "Individuals should have the maximum possible freedom to pursue their own goals and self-development, as long as they don't directly harm others' safety or act unethically."
