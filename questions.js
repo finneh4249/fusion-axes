@@ -1,254 +1,219 @@
 questions = [
     [// Pillar 1: Personal Liberty
-        [//+4 (Strongest Fusion Alignment)
-            "Individuals should have the maximum possible freedom to pursue their own goals and self-development, as long as they don't directly harm others' safety or act unethically.",
-            "A society thrives best when personal autonomy and the pursuit of self-actualization are paramount, with restrictions only applied when absolutely necessary and evidence-based.",
-            "The default stance of government should always be to permit individual actions, unless a clear, compelling case for restriction based on preventing direct harm or gross unethical conduct is made."
+        [//+4 (Strongest Fusion Alignment - High value on broad personal freedom with ethical boundaries)
+            "People should be as free as possible to live their own lives and chase their dreams, as long as they're not hurting anyone else or acting unfairly.",
+            "The government should trust people to make their own choices, and only step in with rules when it's truly necessary to protect others or ensure basic fairness.",
+            "As a general rule, if something isn't directly harming someone else or clearly unethical, people should be allowed to do it."
         ],
         [//+3
-            "A society that allows for a wide range of personal choices and lifestyles, even unconventional ones, is generally a healthier and more innovative society.",
-            "Freedom of expression, even for ideas that are unpopular or offensive to some, is crucial for a vibrant democracy and societal progress.",
-            "People should be free to make choices about their own bodies and health, with the government providing information and access rather than imposing decisions."
+            "It's good for society when people have lots of different lifestyle choices and can express diverse opinions, even if those opinions are unusual.",
+            "Everyone should have the final say over their own body and personal health decisions.",
+            "Freedom of speech is vital, even when what's being said is unpopular or makes some people uncomfortable."
         ],
         [//+2
-            "Government should primarily focus on enabling people to achieve their potential, rather than dictating exactly how they should live their private lives.",
+            "The government's main job should be to help people reach their full potential, not to tell them how to live their private lives.",
             "While some regulations are necessary, they should be designed to minimize interference with individual choices and economic activities.",
-            "Adults should be trusted to make responsible decisions for themselves in most areas of life."
+            "Generally, adults should be treated as capable of making sensible decisions for themselves in most areas of life."
         ],
         [//+1
-            "It's important that people have the freedom to make their own mistakes and learn from them, within reasonable limits that prevent serious harm to others.",
+            "Allowing people the space to make mistakes is often how they learn and grow best, within reasonable limits that prevent serious harm to others.",
             "Voluntary associations and communities should have significant autonomy to manage their own affairs.",
-            "Privacy is a fundamental right, and individuals should have control over their personal information."
+            "Keeping your personal information private and secure is a basic right."
         ],
-        [//-1 (Slight Divergence)
-            "The most important freedom is freedom from government interference, even if that means some people make choices that are indirectly bad for society or themselves.",
-            "Individual property rights are paramount and should rarely be infringed upon by government, even for perceived collective benefit.",
-            "Sometimes, a bit less personal freedom is a fair price to pay for increased economic efficiency or national security."
+        [//-1 (Slight Divergence - Leans more towards 'freedom from' or prioritises other things over broad liberty)
+            "The most important freedom is being left alone by the government, even if it means some people make choices that aren't great for society overall.",
+            "Protecting private property is one of the most important things a government can do.",
+            "Sometimes, giving up a bit of personal freedom is okay if it means things run more smoothly or the economy does better."
         ],
         [//-2
-            "Society needs clear, pre-defined rules about acceptable behaviour, and personal freedom must operate strictly within these established boundaries.",
-            "Certain lifestyle choices, even if private, can be detrimental to the fabric of society and should be discouraged or regulated.",
+            "Society works best when there are clear, well-understood rules for behaviour that everyone follows.",
+            "Some personal choices can be bad for the community as a whole, so it's fair for them to be discouraged or regulated.",
             "The government has a role in guiding citizens towards making 'good' choices for themselves and the community."
         ],
         [//-3
-            "Too much personal freedom can lead to chaos; strong societal norms and moral guidance are more important for maintaining a stable order.",
-            "Individual desires often need to be subordinated to the needs and traditions of the community or nation.",
-            "Authorities should have more power to intervene in people's lives to prevent social problems before they arise."
+            "Too much individual freedom can lead to social problems; strong community values and traditions are more important for keeping things stable.",
+            "What's good for the community or the nation should usually come before an individual's personal desires.",
+            "Authorities often need more power to step in and solve social problems before they get out of hand."
         ],
-        [//-4 (Strongest Divergence)
-            "The government has a right and duty to significantly restrict individual choices to ensure social order and collective well-being, even if no direct harm to others is evident.",
-            "Individualism is often a source of societal weakness; collective unity and conformity are more important.",
-            "Strict adherence to a prescribed moral or social code is necessary for a functional society, and deviations should not be tolerated."
+        [//-4 (Strongest Divergence - Prefers strong control/conformity over individual liberty)
+            "The government needs to strictly control people's choices to maintain order and ensure everyone is doing the right thing for the country.",
+            "It's better for everyone if people generally think and act in similar ways, following established social norms.",
+            "For society to function well, people must follow a common set of moral rules, and those who don't should face consequences."
         ]
     ],
     [// Pillar 2: Advancement
         [//+4
-            "We should continuously invest in scientific research and technological development to solve problems and improve the quality of life for everyone.",
+            "We should always be investing in science and new technologies to find better ways to solve problems and improve life for everyone.",
             "Humanity's future depends on our relentless pursuit of knowledge, innovation, and the responsible application of new technologies.",
-            "A primary goal of society should be to foster an environment where scientific inquiry and technological breakthroughs can flourish unimpeded."
+            "A primary goal of society should be to foster an environment where scientific inquiry and technological breakthroughs can flourish." // Slightly rephrased for flow
         ],
         [//+3
-            "Embracing new ideas, evidence-based solutions, and responsible technological progress is essential for a better future and addressing global challenges.",
-            "We should actively seek out and adopt innovations that can lead to greater efficiency, sustainability, and well-being.",
-            "Education systems should prioritize critical thinking, scientific literacy, and adaptability to prepare for a future of rapid change."
+            "New ideas, solutions based on good evidence, and responsible use of new technology are key to a brighter future for Australia.", // Added "for Australia"
+            "We should be quick to adopt innovations that can lead to greater efficiency, a cleaner environment, and a fairer society.",
+            "Our schools should focus on teaching kids to think critically, understand science, and be ready for a fast-changing world."
         ],
         [//+2
-            "It's important to challenge outdated ways of thinking and be open to innovative approaches, even if they disrupt current practices or industries.",
-            "Societal progress often requires taking calculated risks with new technologies, provided there are safeguards and ethical oversight.",
-            "Governments should support research and development, especially in areas with high potential for public benefit."
+            "It's important to question old habits and be open to new ways of doing things, even if it means some industries or current jobs have to change.",
+            "Trying out new technologies involves some risks, but it's often necessary for progress, as long as we're careful and have proper safeguards.",
+            "The government should definitely support research and development, especially for projects that can benefit all Australians."
         ],
         [//+1
-            "Making new technologies and knowledge accessible to all members of society helps raise the overall standard of living and empowers individuals.",
-            "Open sharing of research and data (open access) generally accelerates scientific progress and benefits humanity.",
-            "A forward-looking perspective that anticipates future needs and opportunities is crucial for good governance."
+            "Making sure everyone can access and benefit from new technologies and knowledge helps improve life for all of us.",
+            "Sharing research findings openly, when appropriate, usually helps science move forward faster for everyone's benefit.",
+            "Good leadership means always thinking about the future and planning for upcoming challenges and opportunities."
         ],
         [//-1
-            "While progress can be good, we should be very cautious about new technologies, prioritising stability, existing jobs, and tradition over rapid change.",
-            "The potential negative consequences of new technologies often outweigh their benefits, so a 'go-slow' approach is usually best.",
-            "We should question whether all forms of 'progress' truly lead to a better quality of life for most people."
+            "While new things can be good, it's usually better to be cautious and stick with what we know works, rather than rushing into big, unproven changes.",
+            "The possible downsides of new technologies often worry me more than their potential benefits, so we should take it slow.",
+            "We need to seriously ask if all this 'progress' really makes most people happier or if it just creates new kinds of stress."
         ],
         [//-2
-            "Established traditions and ways of doing things often hold more wisdom than new, untested ideas or technologies that promise radical change.",
-            "Many modern problems are caused by an over-reliance on technology and a neglect of simpler, more traditional solutions.",
-            "The pursuit of endless economic or technological growth is unsustainable and often detrimental to human well-being."
+            "Often, traditional ways of doing things and common sense hold more value than complicated new ideas or unproven technologies.",
+            "Many of today's problems actually come from relying too much on technology and forgetting simpler, more practical solutions.",
+            "Constantly pushing for more economic growth or new gadgets isn't always good for our well-being or the planet."
         ],
         [//-3
-            "Rapid technological and social change is often harmful and destabilising, and we should actively work to preserve existing social structures and values.",
-            "Many so-called 'advancements' are unnecessary distractions from fundamental human needs and spiritual well-being.",
-            "Focusing on preserving the past is often more important than gambling on an uncertain future."
+            "Rapid changes in technology and society are often unsettling and harmful; we should try harder to keep things stable and protect our existing values.",
+            "Many so-called 'advancements' are just unnecessary distractions from what's truly important in life, like family and community.",
+            "Looking after what we've inherited from the past is often more sensible than taking big chances on an uncertain, tech-driven future."
         ],
         [//-4
-            "Society would be better off if we significantly slowed down or even reversed many forms of technological and societal progress to return to simpler ways of life.",
-            "Most new technologies introduce more problems than they solve and should be viewed with extreme skepticism or outright opposition.",
-            "The idea of continuous 'progress' is a dangerous illusion; we should focus on maintaining what we have."
+            "Society would generally be better if we significantly slowed down technological and social changes, perhaps even returning to simpler, more traditional ways of life.",
+            "Most new technologies cause more problems than they fix and should generally be resisted.",
+            "The whole idea of non-stop 'progress' is misguided; we should focus on being content and preserving what's good now."
         ]
     ],
     [// Pillar 3: Ecological Harmony
         [//+4
-            "We must fundamentally change our systems to ensure humanity lives in true harmony with nature, valuing ecosystems intrinsically while using innovation for a high quality of life.",
-            "The health of the planet and its diverse ecosystems is paramount, and human activities must be radically redesigned to support this, even if it means economic sacrifices in the short term.",
-            "Recognizing the inherent rights of nature (e.g., for rivers or forests) is a necessary step towards true ecological sustainability."
+            "We need to completely rethink how we live to be in balance with nature, valuing it for its own sake while using clever ideas to ensure a good quality of life for people.",
+            "The health of our planet and all its creatures is the most important thing, and our economy must change dramatically to support this, even if it's tough in the short term.",
+            "Giving parts of nature, like unique Aussie ecosystems, their own legal rights could be a powerful way to ensure their long-term protection."
         ],
         [//+3
-            "Protecting biodiversity and restoring natural ecosystems should be a top global priority, requiring significant changes to current industries and consumption patterns.",
-            "We have a moral obligation to prevent human-caused extinctions and to actively work to repair damaged environments.",
-            "An ecomodernist approach, using advanced technology and systems thinking to decouple human well-being from environmental degradation, is vital."
+            "Protecting Australia's unique plants and animals and fixing damaged environments should be a top national priority, requiring big changes from some industries.",
+            "It's our moral duty to stop human-caused extinctions and actively work to repair the harm we've done to the natural world.",
+            "Using advanced technology and smart planning to live well without wrecking the environment – what some call 'ecomodernism' – is the smart way forward."
         ],
         [//+2
-            "It's critical to use technology and smart design to drastically reduce our environmental footprint while enabling people to maintain or improve their living standards.",
-            "Strong international agreements and national regulations are needed to address global environmental challenges like climate change and pollution.",
-            "Transitioning to a circular economy, where waste is minimized and resources are continually reused, is essential for long-term sustainability."
+            "It's vital we use technology and good design to seriously cut down our impact on the environment, while still allowing people to live comfortably and well.",
+            "Australia needs strong national laws and to be part of strong international agreements to deal with big environmental problems like climate change.",
+            "Moving to a 'circular economy' – where we waste less and reuse materials constantly – is essential for Australia's long-term future."
         ],
         [//+1
-            "Humans have a profound responsibility to act as stewards of the environment and minimise harm to all other species and natural habitats.",
-            "Environmental education and fostering a greater appreciation for nature are important for encouraging pro-environmental behaviour.",
-            "Businesses and industries should be held accountable for the environmental impact of their operations."
+            "Australians have a big responsibility to look after our environment and try not to harm native animals or their homes.",
+            "Teaching people, especially kids, about nature and why it's important helps encourage everyone to look after it better.",
+            "Companies should be held financially responsible for any environmental damage they cause."
         ],
         [//-1
-            "Environmental protection is important, primarily because a healthy environment directly benefits human well-being, health, and the economy.",
-            "Technological solutions can solve most environmental problems without requiring major changes to our lifestyles or economic systems.",
-            "While we should avoid excessive pollution, the environment is generally resilient and can absorb a fair amount of human impact."
+            "Looking after the environment is important, mostly because a healthy environment is good for people's health and our national economy.",
+            "We can probably invent new technologies to fix most environmental problems without needing to drastically change how we live.",
+            "Nature is pretty tough and can bounce back from a lot of human activity, as long as we don't push it too far."
         ],
         [//-2
-            "Economic growth and job creation should generally take precedence over environmental concerns, unless the environmental damage is catastrophic and directly threatens human populations.",
-            "The costs of strict environmental regulations often outweigh their benefits, harming businesses and slowing progress.",
-            "Human ingenuity will always find a way to overcome resource scarcity or environmental challenges as they arise."
+            "Creating jobs and growing the economy should usually come before worrying too much about environmental rules, unless the damage is really obvious and urgent.",
+            "Strict environmental laws often cost too much, hurt Australian businesses, and slow down important development projects.",
+            "If we face resource shortages or environmental issues, human ingenuity will likely find a way around them."
         ],
         [//-3
-            "Concerns about human impact on the environment are often exaggerated by alarmists and unnecessarily hinder vital economic development and resource use.",
-            "Private property rights should allow owners to use their land and resources as they see fit, with minimal environmental oversight.",
-            "Focusing too much on long-term environmental issues distracts from more immediate human and economic needs."
+            "Worries about how humans affect the environment are often overblown by some groups and just get in the way of using our resources and developing the country.",
+            "Property owners should generally be able to use their land and its resources as they wish, with minimal government meddling for environmental reasons.",
+            "Focusing too much on long-term 'green' issues distracts us from solving people's immediate, everyday economic problems."
         ],
         [//-4
-            "Nature is primarily a resource for humans to exploit for their benefit, and strict environmental regulations are an undue burden on freedom and prosperity.",
-            "The idea that nature has 'intrinsic value' separate from its usefulness to humans is misguided.",
-            "Humanity's primary goal should be to master and control nature for its own purposes, not to live in 'harmony' with it."
+            "Nature is mainly there for people to use for their own benefit; too many environmental rules just get in the way of our freedom and prosperity.",
+            "The idea that nature has 'value' on its own, apart from what it provides for humans, doesn't really make sense.",
+            "Humanity's main goal should be to effectively manage and use nature for our purposes, not to try and 'live in harmony' with it in some sentimental way."
         ]
     ],
     [// Pillar 4: Safety
         [//+4
-            "A key government role is ensuring everyone is safe from violence and has their basic needs (food, shelter, healthcare) met, using harm minimisation that respects liberty.",
-            "Universal access to essential services that guarantee a basic standard of living and protection from deprivation is a fundamental human right the state must uphold.",
-            "Prioritizing public health and preventative measures is crucial for overall societal safety and well-being, even if it requires collective action and investment."
+            "A key government job is to make sure everyone in Australia is safe from violence and has their basic needs – like food, housing, and healthcare – met, using practical solutions that also respect people's freedom.",
+            "All Australians should have access to essential services that guarantee a decent standard of living and protection from hardship; the government must make this happen.",
+            "Focusing on public health and preventing problems before they start is crucial for a safe and healthy society, even if it means we all need to contribute."
         ],
         [//+3
-            "Society has a collective moral responsibility to provide a robust social safety net for its most vulnerable members, ensuring no one falls through the cracks.",
-            "Addressing the root causes of crime and social disorder, such as poverty and lack of opportunity, is more effective for long-term safety than solely focusing on punishment.",
-            "Workplace safety regulations and consumer protection laws are vital for protecting individuals from harm and exploitation."
+            "As a country, we have a responsibility to provide a strong social safety net so that our most vulnerable people aren't left behind.",
+            "Getting to the root causes of crime and social problems – like poverty or lack of education – is a better way to create long-term safety than just focusing on punishment.",
+            "Rules that protect workers on the job and keep consumers safe from dodgy products are vital."
         ],
         [//+2
-            "Preventing exploitation, abuse, and ensuring public health are legitimate and necessary reasons for government action and regulation within reasonable bounds.",
-            "It is important to have well-resourced emergency services (police, fire, ambulance) that are accountable to the community they serve.",
-            "Mental health should be treated with the same importance as physical health within our public safety and healthcare systems."
+            "Stopping people from being exploited or abused, and looking after public health, are fair enough reasons for the government to make some rules.",
+            "It's important to have well-funded emergency services (like police, firies, and ambos) that are trusted by and accountable to the local community.",
+            "Mental health support should be just as important and accessible as physical health care in our public system."
         ],
         [//+1
-            "It's important to balance individual freedoms with proportionate measures to keep the community safe from clear and direct threats, based on evidence.",
-            "Rehabilitation and restorative justice should be key components of the justice system, aiming to reduce reoffending and heal communities.",
-            "Investing in disaster preparedness and response capabilities is a wise use of public funds to protect citizens."
+            "We need to find a good balance between people's individual freedoms and sensible measures to keep the community safe from real, direct dangers.",
+            "Helping offenders turn their lives around and repair harm (restorative justice) should be a bigger part of our justice system.",
+            "It's smart for the government to spend money on being prepared for disasters, like bushfires or floods, to protect people."
         ],
         [//-1
-            "While safety is a concern, individuals are primarily responsible for their own well-being and security; government intervention should be a last resort and narrowly focused.",
-            "Excessive focus on public safety can lead to an overbearing state that infringes too much on personal liberties.",
-            "Market solutions and private initiatives can often provide safety and security more efficiently than government programs."
+            "While community safety matters, people are mostly responsible for looking after themselves; the government should only step in as a last resort.",
+            "Focusing too much on public safety can lead to the government getting too much power and interfering too much in our lives.",
+            "Often, private companies or community groups can provide safety and security just as well, if not better, than government programs."
         ],
         [//-2
-            "A strong focus on law and order, including strict punishment for wrongdoing and increased surveillance, is the most effective way to ensure societal safety.",
-            "People who take risks or make poor choices should bear the primary consequences, rather than relying on public safety nets.",
-            "The right to bear arms is essential for personal safety and deterring crime."
+            "The best way to keep society safe is through strong law and order, with tough punishments for those who break the rules and more powers for police.",
+            "If people make risky choices or don't look after themselves, they should mostly deal with the consequences rather than expecting the public to bail them out.",
+            "The right to own weapons for self-defence is important for personal safety." // Adjusted for Aus context if needed, or kept general
         ],
         [//-3
-            "Providing extensive social safety nets can make people overly dependent, reduce individual initiative, and become an unsustainable burden on taxpayers.",
-            "Criminals often understand only the threat of force, so a tough, punitive approach is necessary to maintain order.",
-            "Protecting property rights is often more important for societal stability than providing for everyone's basic needs."
+            "Having too many welfare programs can make people lazy, unwilling to work, and ends up costing taxpayers too much.",
+            "Criminals often only understand the threat of force, so a very tough, no-nonsense approach from authorities is necessary to keep order.",
+            "Protecting people's private property is often more important for a stable society than trying to provide for everyone's basic needs through government programs."
         ],
         [//-4
-            "The government has no role in providing for people's basic necessities or protecting them from all risks; this is entirely up to individuals and private charity.",
-            "Any form of social safety net is an unacceptable infringement on the liberty of those who have to pay for it.",
-            "A society where everyone is responsible for their own defense, without reliance on public police forces, is preferable."
+            "The government really shouldn't be involved in providing for people's basic needs or protecting them from every risk; that's up to individuals and charities.",
+            "Any kind of taxpayer-funded social safety net is unfair to those who work hard and have to pay for others.",
+            "A society where everyone is responsible for their own defence, without needing public police, would be ideal."
         ]
     ],
     [// Pillar 5: Ethical Conduct
         [//+4
-            "Government must operate with utmost transparency, honesty, and accountability, with all decisions rigorously based on verifiable evidence and open to public scrutiny.",
-            "A culture of truthfulness and integrity must be actively fostered and legally protected within all levels of government and public institutions.",
-            "Independent bodies with strong powers are essential to investigate and prosecute corruption and unethical behaviour in public office, without political interference."
+            "The government must be completely open, honest, and accountable, with all its decisions based on solid evidence and available for everyone to see and question.",
+            "We need a culture of truthfulness and strong integrity in our government, actively supported and legally enforced at all levels.",
+            "Independent watchdogs with real power are essential to investigate and stop corruption or unethical behaviour by politicians and public servants, without any political meddling."
         ],
         [//+3
-            "Strong anti-corruption measures, comprehensive whistleblower protections, and real-time disclosure of political influences (like donations and lobbying) are absolutely essential.",
-            "Public servants and elected officials must be held to the highest ethical standards, with clear consequences for breaches of trust.",
-            "Decisions made by the government should always be justifiable with clear, publicly accessible reasoning based on evidence."
+            "Strong laws against corruption, full protection for whistleblowers, and making all political donations and lobbying efforts public in real-time are absolutely vital.",
+            "Our public servants and elected officials must be held to the highest ethical standards, and face serious consequences if they break public trust.",
+            "Government decisions should always be clearly explained to the public, with the evidence and reasoning behind them easy to find."
         ],
         [//+2
-            "It's critical that politicians and public servants act in good faith, consistently prioritizing the public interest over personal, corporate, or partisan gain.",
-            "Open access to government information (Freedom of Information) should be the default, with very limited and clearly justified exceptions.",
-            "Mechanisms for citizen oversight and participation in monitoring government conduct are important for maintaining ethical standards."
+            "It's crucial that politicians and government workers always act in good faith, putting what's best for the public ahead of their own interests or their party's.",
+            "Access to government information should be easy for everyone (Freedom of Information), with very few, clearly justified secrets.",
+            "Having ways for ordinary citizens to oversee and comment on government actions is important for keeping standards high."
         ],
         [//+1
-            "Respecting truth and facts, however uncomfortable or politically inconvenient, is fundamental to sound decision-making and public trust.",
-            "Conflicts of interest in public office must be diligently declared and managed to maintain impartiality.",
-            "Ethical education and reminders of public duty should be part of the ongoing development for all government officials."
+            "Sticking to the truth and facts, even when they're awkward or politically unpopular, is the only way to make good decisions for the country.",
+            "Anyone in public office who might have a conflict of interest must be upfront about it and make sure it doesn't influence their decisions.",
+            "Regular reminders and training about ethical duties should be standard for everyone working in government."
         ],
         [//-1
-            "While transparency is an ideal, governments sometimes need to operate with a degree of secrecy or make pragmatic, behind-the-scenes deals to be effective.",
-            "Achieving policy outcomes is more important than adhering to rigid ethical processes in every single instance.",
-            "A certain amount of political maneuvering and favouritism is inevitable and sometimes even necessary in politics."
+            "While being open is good, sometimes the government needs to keep things quiet or make practical deals to get important stuff done efficiently.",
+            "Getting good results for the country is sometimes more important than following every single ethical rule to the letter.",
+            "A bit of political game-playing and looking after your mates is just how politics works, and sometimes it's even necessary."
         ],
         [//-2
-            "Politics is inherently about power and competing interests, so expecting perfect ethical conduct or complete transparency from leaders is often unrealistic.",
-            "Too much focus on 'ethics' can lead to bureaucratic paralysis and prevent decisive action when it's needed.",
-            "Loyalty to one's party or political allies is often as important as adherence to abstract ethical principles."
+            "Politics is mostly about power and different groups fighting for their interests, so expecting perfect honesty or total openness from leaders is a bit naive.",
+            "Focusing too much on 'ethics' can slow things down with too much red tape and stop leaders from taking decisive action when needed.",
+            "Being loyal to your political party or allies is often just as important in politics as sticking to some abstract ethical code."
         ],
         [//-3
-            "What matters most is that leaders are strong and achieve their stated goals for the nation, even if they sometimes bend ethical rules or aren't fully transparent with the public.",
-            "Whistleblowers often cause more harm than good by disrupting government operations and leaking sensitive information.",
-            "The 'court of public opinion' is fickle; leaders shouldn't be overly constrained by demands for constant ethical justification."
+            "What really matters is that our leaders are strong and deliver what the nation needs, even if they have to bend a few ethical rules or aren't completely open with us.",
+            "People who leak government information (whistleblowers) often cause more trouble than good by stirring things up and revealing secrets.",
+            "Public opinion changes too much; leaders shouldn't be constantly worried about justifying every little thing they do ethically."
         ],
         [//-4
-            "The public doesn't need to know the details of government decisions; it's better if leaders can act decisively without constant scrutiny or adherence to strict ethical codes.",
-            "Ethical considerations are often a luxury that cannot be afforded when dealing with serious national challenges or powerful opponents.",
-            "In politics, the ends often justify the means, and leaders should do whatever it takes to achieve what they believe is right."
+            "The public doesn't really need to know all the details of how government decisions are made; it's better if leaders can just get on with the job without constant questioning.",
+            "Strict ethical rules are often a pain and get in the way when you're dealing with serious national problems or tough opponents.",
+            "In politics, you often have to do whatever it takes to win and achieve your goals; the end result is what counts."
         ]
     ],
     [// Pillar 6: Equity
         [//+4
-            "All individuals, regardless of background, must have genuinely equal access to government-derived opportunities and services, with policies actively working for fair and just outcomes for everyone.",
-            "Systemic inequalities must be actively dismantled through government policy to ensure that historical disadvantages do not perpetuate unfairness across generations.",
-            "A just society ensures that the benefits of progress and public resources are distributed in a way that uplifts everyone, especially the most vulnerable."
+            "Every Australian, no matter their background or where they live, must have genuinely equal access to government services and opportunities, with policies actively working to make things fair for all.",
+            "We need government action to break down unfair systems that keep some groups disadvantaged, so everyone has a fair go, regardless of their family history.",
+            "A fair society makes sure that the benefits of progress and public money are spread around to lift everyone up, especially those who need it most."
         ],
         [//+3
-            "It's a government's responsibility to ensure decent minimum living standards and to make the benefits of societal progress, like education and healthcare, universally accessible and affordable.",
-            "Policies should be designed to reduce disparities in wealth, health, and opportunity between different groups in society.",
-            "Affirmative action or similar measures can be justified if they are transparently implemented and evidence-based means to correct proven systemic inequities."
-        ],
-        [//+2
-            "Public institutions and all policies must be designed and implemented in a way that is fair, just, and actively promotes equitable outcomes for all segments of the population.",
-            "The impact of any new policy on different demographic groups should be carefully assessed to avoid inadvertently creating or worsening inequities.",
-            "Ensuring everyone has a voice in shaping policies that affect them is crucial for achieving equitable governance."
-        ],
-        [//+1
-            "Transparency in how opportunities and resources are distributed by the government is crucial for accountability and building public trust in fairness.",
-            "Addressing discrimination in all its forms is a key responsibility of government to promote a more equitable society.",
-            "Investing in public services that benefit everyone, like quality public education and infrastructure, promotes broader equity."
-        ],
-        [//-1
-            "As long as everyone has the same theoretical starting line (equality of opportunity), the government shouldn't intervene heavily to try and engineer more equal outcomes.",
-            "Focusing too much on group equity can detract from individual merit and personal responsibility.",
-            "While extreme poverty should be addressed, some level of inequality is a natural and acceptable outcome in a competitive society."
-        ],
-        [//-2
-            "Significant differences in outcomes are primarily a natural result of individual talent, effort, and choices; too much focus on 'equity' can stifle merit and create resentment.",
-            "Government attempts to redistribute wealth or enforce equal outcomes often lead to inefficiency and reduce overall prosperity.",
-            "People should be rewarded based on their individual contributions, regardless of existing societal disparities."
-        ],
-        [//-3
-            "Policies aimed at promoting equity for specific groups often lead to unfairness for others and can be seen as a form of reverse discrimination or social engineering.",
-            "The pursuit of 'equity' often involves an unacceptable level of government overreach into private lives and economic decisions.",
-            "It's not the government's role to ensure everyone succeeds equally; its role is to protect basic rights and let individuals compete."
-        ],
-        [//-4
-            "Society is naturally hierarchical, and it's not the government's role to try and make everyone equal or provide equal access to all opportunities; people should rely on their own advantages.",
-            "Any attempt by the government to enforce economic or social equity is an unjust infringement on individual liberty and property rights.",
-            "The concept of 'social justice' or broad 'equity' is often a guise for envy and an attack on those who have earned their success."
-        ]
-    ]
-];
+            "It's the government's job to make sure everyone has a decent minimum standard of living and that things like good education and healthcare are available and affordable 
