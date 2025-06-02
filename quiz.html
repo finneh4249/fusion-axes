@@ -155,8 +155,8 @@
      * Normalizes a raw pillar score (expected range -32 to +32) to a 0-100 scale.
      */
     function normalizePillarScore(rawScore) {
-        const minRawScore = -32; // 8 questions * -4 points (min score per question)
-        const maxRawScore = 32;  // 8 questions * +4 points (max score per question)
+        const minRawScore = -60; // 8 questions * -4 points (min score per question)
+        const maxRawScore = 60;  // 8 questions * +4 points (max score per question)
         
         // Cap rawScore to prevent issues if logic slightly over/under shoots due to multiple questions per level etc.
         const cappedScore = Math.max(minRawScore, Math.min(rawScore, maxRawScore));
