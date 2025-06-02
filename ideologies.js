@@ -2,13 +2,13 @@ const ideologies = [
     {
         "name": "Fusion Party Alignment",
         "description": "This profile reflects a strong alignment with the Fusion Party's core values and their balanced, evidence-based approach to policy.",
-        "stats": { // Scores are 0-100 scale from our quiz
-            "liberty": 90,     // Personal Liberty
-            "advancement": 95, // Advancement
-            "harmony": 95,     // Ecological Harmony
-            "safety": 85,      // Safety
-            "ethics": 100,     // Ethical Conduct
-            "equity": 90       // Equity
+        "stats": {
+            "liberty": 90,
+            "advancement": 95,
+            "harmony": 95,
+            "safety": 85,
+            "ethics": 100,
+            "equity": 90
         }
     },
     {
@@ -25,14 +25,14 @@ const ideologies = [
     },
     {
         "name": "Eco-Centric Guardian",
-        "description": "Places paramount importance on ecological protection and natural balance, sometimes advocating for limits on technological advancement or individual consumption.",
+        "description": "Places paramount importance on ecological protection and natural balance, sometimes advocating for limits on technological advancement or individual consumption for environmental purity.",
         "stats": {
-            "liberty": 50,
-            "advancement": 30,
+            "liberty": 40, // Liberty restricted for ecological goals
+            "advancement": 25, // Skeptical of tech as a solution
             "harmony": 100,
-            "safety": 70, 
-            "ethics": 80,
-            "equity": 60
+            "safety": 65, // Safety from eco-collapse, but individual safety might be lower due to restrictions
+            "ethics": 70, // Ethical imperative to protect nature
+            "equity": 50  // Equity in austerity, perhaps
         }
     },
     {
@@ -48,15 +48,15 @@ const ideologies = [
         }
     },
     {
-        "name": "Market-Driven Individualist", // Similar to "Pure Market Idealist" but more neutral name
+        "name": "Market-Driven Individualist",
         "description": "Strongly emphasizes economic freedoms and market-based solutions, with less focus on state-led ecological, safety, or equity interventions.",
         "stats": {
-            "liberty": 85,      // High on economic liberty
-            "advancement": 70,  // Market-driven innovation
-            "harmony": 30,      // Externalities often secondary
-            "safety": 40,       // Minimal safety net
-            "ethics": 50,       // Can be lower if profit is primary
-            "equity": 30        // Market outcomes seen as inherently fair
+            "liberty": 90,      // High on economic liberty specifically
+            "advancement": 70,
+            "harmony": 20,      // Externalities largely ignored
+            "safety": 25,       // Minimal state safety net
+            "ethics": 40,       // "Market ethics" can differ
+            "equity": 20        // Market outcomes are definitionally fair
         }
     },
     {
@@ -76,11 +76,72 @@ const ideologies = [
         "description": "Places the highest importance on transparency, accountability, and evidence-based decision-making in government, viewing these as prerequisites for all other positive outcomes.",
         "stats": {
             "liberty": 70,
-            "advancement": 75, // Evidence-based advancement
-            "harmony": 70,     // Ethical approach to environment
-            "safety": 70,      // Safety through good governance
+            "advancement": 75, 
+            "harmony": 70,     
+            "safety": 70,      
             "ethics": 100,
-            "equity": 75      // Equity through fair process
+            "equity": 75      
+        }
+    },
+    // --- NEW CONTRASTING ARCHETYPES ---
+    {
+        "name": "Traditional Community Guardian",
+        "description": "Emphasizes established social norms, community cohesion based on tradition, and cautious approaches to change, valuing order derived from shared heritage.",
+        "stats": {
+            "liberty": 40,     // Individual liberty secondary to community norms
+            "advancement": 20, // Skeptical of progress that disrupts tradition
+            "harmony": 50,     // Environmentalism if it aligns with traditional stewardship, not radical change
+            "safety": 80,      // Safety through social order and known structures
+            "ethics": 60,      // Ethics based on traditional moral codes
+            "equity": 30       // Equity within traditional roles, less focus on systemic change for outsiders
+        }
+    },
+    {
+        "name": "Extreme Laissez-Faire Capitalist",
+        "description": "Advocates for minimal to no government intervention in the economy or personal lives, believing markets and individual contracts are sufficient for societal organization.",
+        "stats": {
+            "liberty": 100,    // Primarily economic and negative liberty
+            "advancement": 60, // Only market-driven, no public R&D
+            "harmony": 10,     // No value for environmental protection beyond property rights
+            "safety": 10,      // No public safety net, private security
+            "ethics": 20,      // Contractual ethics, caveat emptor
+            "equity": 5        // Market outcomes are just, regardless of disparity
+        }
+    },
+    {
+        "name": "Authoritarian Nationalist",
+        "description": "Prioritizes national strength, unity, and security above all, often at the expense of individual liberties, international cooperation, and minority rights.",
+        "stats": {
+            "liberty": 10,     // Individual liberties suppressed for national unity/security
+            "advancement": 40, // Advancement only if it serves national power
+            "harmony": 25,     // Environment sacrificed for national industry/resources
+            "safety": 90,      // National security and internal order (for the 'in-group') paramount
+            "ethics": 15,      // "National interest" or leader's will defines ethics; low transparency
+            "equity": 10       // Equity only for the dominant national group; minorities/outsiders excluded
+        }
+    },
+    {
+        "name": "Deep Green De-Growther", // More extreme than Eco-Centric Guardian
+        "description": "Believes human society must drastically reduce its population, consumption, and technological footprint to achieve true ecological sustainability, even if it means sacrificing modern living standards.",
+        "stats": {
+            "liberty": 20,     // Significant restrictions on personal consumption/choices for the environment
+            "advancement": 5,  // Views most modern technology as inherently harmful or unsustainable
+            "harmony": 100,    // Absolute priority, nature over human desires
+            "safety": 50,      // Safety from ecological collapse, but potential deprivation from de-growth
+            "ethics": 60,      // Strong moral imperative for ecological preservation above all
+            "equity": 40       // Equity in shared austerity/simple living
+        }
+    },
+    {
+        "name": "Theocratic Moralist", // Stronger than Social Conservative
+        "description": "Advocates for society and laws to be strictly governed by specific religious doctrines and moral codes, with little tolerance for deviation.",
+        "stats": {
+            "liberty": 15,     // Personal liberty heavily restricted by religious law/moral code
+            "advancement": 20, // Advancement rejected if it contradicts religious teachings or traditional morality
+            "harmony": 40,     // Environment stewardship if dictated by religion, otherwise secondary
+            "safety": 85,      // Safety through strict moral order and adherence to religious law
+            "ethics": 70,      // Ethics are divinely ordained and immutable
+            "equity": 25       // Equity defined by religious status or adherence; outsiders may not be equal
         }
     }
 ];
