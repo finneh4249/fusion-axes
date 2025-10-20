@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Fusion — Web Design System Sheet</title>
+
+<!-- Inter font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+  /* =========================
+     Design Tokens (CSS vars)
+     ========================= */
+  :root{
+    /* Type */
+    --font-primary: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    /* Core Brand Colours */
+    --core-black: #010102;
+    --core-magenta: #C926F2;
+    --core-mint: #5EFFD8;
+    --core-lavender: #9A94E7;
+    --core-grey: #949494;
+
+    /* Functional / tokens */
+    --color-text-primary: var(--core-black);
+    --color-text-secondary: var(--core-grey);
+    --color-bg-page: #FAFAFA;     /* chosen page background */
+    --color-bg-surface: #F5F7FA;  /* container / card background */
+
+    /* Primary actions & accessible variants */
+    --color-action-primary: var(--core-magenta);
+    --color-action-primary-hover: #A01DC3;    /* darker accessible hover */
+    --color-action-primary-focus: #B722E0;    /* focus ring tint */
+
+    /* Accents */
+    --color-accent-mint: var(--core-mint);
+    --color-accent-lavender: var(--core-lavender);
+
+    /* System feedback */
+    --color-error: #D93025;
+    --color-success: #1E8E3E;
+    --color-warning: #F9AA00;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, var(--core-magenta) 0%, var(--core-lavender) 100%);
+    --gradient-accent: linear-gradient(90deg, var(--core-mint) 0%, var(--core-lavender) 100%);
+
+    /* Motion defaults */
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 180ms;
+    --motion-medium: 220ms;
+
+    /* Layout tokens */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 20px;
+    --space-lg: 32px;
+    --radius-md: 12px;
+    --shadow-soft: 0 6px 18px rgba(1,1,2,0.06);
+  }
+
+  /* =========================
+     Base page styles
+     ========================= */
+  html,body{
+    height:100%;
+    margin:0;
+    font-family:var(--font-primary);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    background:var(--color-bg-page);
+    color:var(--color-text-primary);
+    line-height:1.45;
+    font-size:16px;
+  }
+
+  .wrap{
+    max-width:1200px;
+    margin:40px auto;
+    padding:24px;
+  }
+
+  header{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    margin-bottom:24px;
+  }
+  .brand{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .brand-mark{
+    width:56px;
+    height:56px;
+    border-radius:8px;
+    background:var(--core-magenta);
+    background-image:linear-gradient(135deg,var(--core-magenta),var(--core-lavender));
+    box-shadow:var(--shadow-soft);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-weight:700;
+    font-size:18px;
+  }
+  h1{font-size:20px;margin:0}
+  .muted { color:var(--color-text-secondary); font-size:13px; margin-top:4px }
+
+  /* ===========
+     Swatch Grid
+     =========== */
+  .swatch-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+    margin-top:20px;
+  }
+  .swatch{
+    background:white;
+    border-radius:10px;
+    padding:12px;
+    box-shadow:var(--shadow-soft);
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .swatch-square{
+    width:72px;
+    height:72px;
+    border-radius:8px;
+    flex:0 0 72px;
+    box-shadow:inset 0 0 0 1px rgba(1,1,2,0.03);
+  }
+  .swatch-meta{font-size:13px}
+  .swatch-meta strong{display:block;font-weight:600}
+
+  /* Accessibility badges */
+  .badge { font-size:12px;padding:4px 8px;border-radius:999px;background:rgba(1,1,2,0.04);display:inline-block;margin-top:8px }
+
+  /* =============
+     Typography demo
+     ============= */
+  .type-sample{ background:var(--color-bg-surface); padding:20px;border-radius:10px;margin-top:24px; box-shadow:var(--shadow-soft) }
+  .type-row{ margin-bottom:14px }
+  .display{ font-size:48px; font-weight:700; line-height:1.05}
+  .h1{ font-size:32px;font-weight:700}
+  .h2{ font-size:22px;font-weight:500}
+  .body{ font-size:18px }
+  .caption{ font-size:13px;color:var(--color-text-secondary) }
+
+  /* ===========
+     Buttons
+     =========== */
+  .buttons{ display:flex; gap:12px; align-items:center; margin-top:20px; flex-wrap:wrap; }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:10px 18px;
+    border-radius:10px;
+    border:0;
+    cursor:pointer;
+    font-weight:600;
+    transition:transform var(--motion-medium) var(--motion-ease), box-shadow var(--motion-medium) var(--motion-ease), background-color var(--motion-medium) var(--motion-ease);
+    color:white;
+    background:var(--color-action-primary);
+    box-shadow: 0 6px 18px rgba(201,38,242,0.12);
+    text-decoration:none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:focus{ outline:3px solid rgba(185,0,170,0.12); outline-offset:3px; box-shadow:0 8px 22px rgba(160,29,195,0.12) }
+  .btn:hover{ transform: translateY(-3px); background:var(--color-action-primary-hover) }
+  .btn.ghost{
+    background:transparent;
+    color:var(--color-text-primary);
+    border:1px solid rgba(1,1,2,0.06);
+    box-shadow:none;
+    transform:none;
+  }
+
+  /* small/large CTA */
+  .btn-lg{ padding:14px 22px; font-size:17px }
+  .btn-sm{ padding:8px 12px; font-size:14px }
+
+  /* CTA with gradient */
+  .btn-gradient{
+    background:var(--gradient-hero);
+    color:white;
+    box-shadow:0 12px 36px rgba(154,78,222,0.12);
+  }
+  .btn-gradient:hover{ transform:translateY(-3px) scale(1.01) }
+
+  /* ==================
+     Gradient Hero demo
+     ================== */
+  .hero{
+    border-radius:14px;
+    padding:36px;
+    background:var(--gradient-hero);
+    color:white;
+    margin-top:24px;
+    box-shadow: 0 12px 36px rgba(9,9,12,0.10);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .accent{
+    font-weight:700;
+    letter-spacing:0.2px;
+  }
+  .hero-sub{ opacity:0.95; margin-top:8px; font-size:15px }
+
+  /* subtle animated gradient band */
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:0.06;
+    background:var(--gradient-accent);
+    mix-blend-mode:overlay;
+    transform:translateX(-20%);
+    transition:transform 6s linear;
+    will-change:transform;
+  }
+  .hero:hover::after{ transform:translateX(20%) }
+
+  /* ========
+     Underline sweep (animated demo)
+     ======== */
+  .underline-sweep{
+    display:inline-block;
+    position:relative;
+    padding-bottom:4px;
+    cursor:default;
+  }
+  .underline-sweep::after{
+    content:"";
+    position:absolute;
+    left:0;right:0;bottom:0;height:4px;border-radius:2px;
+    background: linear-gradient(90deg,var(--core-magenta),var(--core-lavender));
+    transform-origin:left center;
+    transform:scaleX(0);
+    transition:transform var(--motion-medium) var(--motion-ease);
+  }
+  .underline-sweep:hover::after{ transform:scaleX(1) }
+
+  /* ================
+     Card demo (fade+slide)
+     ================ */
+  .card{
+    background:var(--color-bg-surface);
+    padding:18px;
+    border-radius:12px;
+    box-shadow:var(--shadow-soft);
+    transform:translateY(8px);
+    opacity:0;
+    animation:cardIn 420ms var(--motion-ease) forwards;
+    margin-top:16px;
+  }
+  @keyframes cardIn{
+    to { opacity:1; transform:translateY(0) }
+  }
+
+  /* =====================
+     Accessibility callouts
+     ===================== */
+  .note{ font-size:13px;color:var(--color-text-secondary); margin-top:12px }
+  .code{ font-family:monospace; font-size:13px; background:rgba(1,1,2,0.03); padding:6px 8px; border-radius:6px; display:inline-block }
+
+  /* ============
+     Responsive
+     ============ */
+  @media (max-width:880px){
+    .swatch-grid{ grid-template-columns:repeat(2,1fr) }
+  }
+  @media (max-width:520px){
+    .swatch-grid{ grid-template-columns:1fr }
+    .wrap{ padding:20px; margin:20px auto }
+    .display{ font-size:36px }
+  }
+
+  /* ========
+     Reduced motion
+     ======== */
+  @media (prefers-reduced-motion: reduce){
+    .btn, .hero::after, .card, .underline-sweep::after { transition:none; animation:none; transform:none !important }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">F</div>
+        <div>
+          <h1>Fusion — Web Design System</h1>
+          <div class="muted">Tokens, gradients, and animated previews — developer-ready HTML/CSS</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- swatch grid -->
+    <section aria-labelledby="colors-heading">
+      <h2 id="colors-heading">Colour System</h2>
+      <p class="note">Base palette (derived from Fusion primary logo colours). Accessibility badges below each token show typical usage notes.</p>
+
+      <div class="swatch-grid" role="list">
+        <!-- Core Black -->
+        <div class="swatch" role="listitem">
+          <div class="swatch-square" style="background:var(--core-black)"></div>
+          <div class="swatch-meta">
+            <strong>Core Black</strong>
+            <div class="code">#010102</div>
+            <div class="badge">Text / Icons — AAA on white</div>
+          </div>
+        </div>
+
+        <!-- Core Magenta -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--core-magenta)"></div>
+          <div class="swatch-meta">
+            <strong>Core Magenta</strong>
+            <div class="code">#C926F2</div>
+            <div class="badge">Primary Action — use darker variant for small white text</div>
+            <div class="note">WCAG: 3.01:1 on white for large/bold text only. Use <span class="code">--color-action-primary-hover</span> for small text/buttons.</div>
+          </div>
+        </div>
+
+        <!-- Core Mint -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--core-mint)"></div>
+          <div class="swatch-meta">
+            <strong>Core Mint</strong>
+            <div class="code">#5EFFD8</div>
+            <div class="badge">Accent — pair with dark text</div>
+            <div class="note">Low contrast on white — do not use for white text.</div>
+          </div>
+        </div>
+
+        <!-- Core Lavender -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--core-lavender)"></div>
+          <div class="swatch-meta">
+            <strong>Core Lavender</strong>
+            <div class="code">#9A94E7</div>
+            <div class="badge">Accent / Gradient</div>
+            <div class="note">Use with dark text — ideal for decorative gradients.</div>
+          </div>
+        </div>
+
+        <!-- Core Grey -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--core-grey)"></div>
+          <div class="swatch-meta">
+            <strong>Core Grey</strong>
+            <div class="code">#949494</div>
+            <div class="badge">Secondary Text / Dividers</div>
+          </div>
+        </div>
+
+        <!-- Page background -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--color-bg-page); border:1px solid rgba(1,1,2,0.03)"></div>
+          <div class="swatch-meta">
+            <strong>Page Background</strong>
+            <div class="code">#FAFAFA</div>
+            <div class="badge">Chosen background</div>
+            <div class="note">Softer than pure white — reduces glare & aids legibility.</div>
+          </div>
+        </div>
+
+        <!-- Surface -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--color-bg-surface)"></div>
+          <div class="swatch-meta">
+            <strong>Surface / Cards</strong>
+            <div class="code">#F5F7FA</div>
+            <div class="badge">Containers / Cards</div>
+          </div>
+        </div>
+
+        <!-- System feedback -->
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--color-error)"></div>
+          <div class="swatch-meta">
+            <strong>Error</strong>
+            <div class="code">#D93025</div>
+            <div class="badge">Danger / Error</div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--color-success)"></div>
+          <div class="swatch-meta">
+            <strong>Success</strong>
+            <div class="code">#1E8E3E</div>
+            <div class="badge">Success / Confirmation</div>
+          </div>
+        </div>
+
+        <div class="swatch">
+          <div class="swatch-square" style="background:var(--color-warning)"></div>
+          <div class="swatch-meta">
+            <strong>Warning / Info</strong>
+            <div class="code">#F9AA00</div>
+            <div class="badge">Warning / Info</div>
+          </div>
+        </div>
+
+      </div><!-- /swatch-grid -->
+    </section>
+
+    <!-- typography -->
+    <section class="type-sample" aria-labelledby="type-heading">
+      <h2 id="type-heading">Typography</h2>
+      <div class="type-row display">The Fusion Party</div>
+      <div class="type-row h1">Heading One — Inter Bold 32px</div>
+      <div class="type-row h2">Heading Two — Inter Medium 22px</div>
+      <div class="type-row body">Body text example — Inter Regular 18px. Use 16–18px on desktop for good readability.</div>
+      <div class="caption">Caption / Small — Inter 13px · Secondary colour: var(--color-text-secondary)</div>
+    </section>
+
+    <!-- buttons / interactions -->
+    <section aria-labelledby="components-heading">
+      <h2 id="components-heading" style="margin-top:22px">Components & Motion</h2>
+      <p class="note">Buttons, CTAs, and animated previews. Motion: 180–250ms easing. Reduced motion respected.</p>
+
+      <div class="buttons">
+        <a class="btn btn-lg" href="#" role="button">Primary action</a>
+        <button class="btn btn-lg btn-gradient" type="button">Gradient CTA</button>
+        <button class="btn btn-lg ghost" type="button">Ghost</button>
+        <button class="btn btn-sm" type="button">Small</button>
+      </div>
+
+      <div style="margin-top:18px">
+        <div class="hero" aria-hidden="true">
+          <div style="max-width:720px">
+            <div class="accent">Join Fusion. Build a better future.</div>
+            <div class="hero-sub">Hero banners should be used sparingly — gradients reserved for key sections (hero, CTA, campaign pages).</div>
+            <div style="margin-top:18px">
+              <a class="btn btn-gradient" href="#" role="button">Donate</a>
+              <a class="btn" href="#" style="margin-left:10px">Learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:22px">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+            <div>
+              <div style="font-weight:700">Policy card</div>
+              <div style="font-size:14px;color:var(--color-text-secondary)">Short explainer about a policy area — use Core Black for headings and Core Grey for supporting text.</div>
+            </div>
+            <div>
+              <a class="btn" href="#">Read</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px">
+        <div class="underline-sweep" aria-hidden="true">Decorative underline sweep (hover)</div>
+      </div>
+
+    </section>
+
+    <section style="margin-top:22px">
+      <h2>Usage Notes & Integration</h2>
+      <p class="note">Tokens are declared as CSS variables for immediate use in NationBuilder theme CSS or to port straight into a React app later. Use <span class="code">--color-action-primary-hover</span> for accessible small-button states. Reserve gradients for hero/CTA components only. Pair <span class="code">--core-mint</span> and <span class="code">--core-lavender</span> with dark text (#010102).</p>
+
+      <div style="margin-top:12px">
+        <strong>Example token usage (CSS):</strong>
+        <div class="code" style="display:block;margin-top:8px;">
+          .site-header { background: var(--color-bg-page); color: var(--color-text-primary); }<br>
+          .cta { background: var(--color-action-primary); color: #fff; }<br>
+          .card { background: var(--color-bg-surface); border-radius: 12px; }
+        </div>
+      </div>
+
+      <div style="margin-top:12px">
+        <strong>Accessibility reminder:</strong>
+        <div class="note">Core Magenta (#C926F2) only meets WCAG contrast for large/bold white text. Use <span class="code">--color-action-primary-hover</span> (#A01DC3) or text color <span class="code">#010102</span> for small text/buttons.</div>
+      </div>
+
+      <div style="margin-top:12px">
+        <strong>Reduced-motion:</strong>
+        <div class="note">All animations respect <span class="code">prefers-reduced-motion</span>. Keep motion short and purposeful (180–250ms).</div>
+      </div>
+
+    </section>
+
+    <footer style="margin-top:30px;color:var(--color-text-secondary);font-size:13px">
+      Fusion Party — Design system built from the 5 core logo colours. Tokens ready for NationBuilder / React migration.
+    </footer>
+  </div>
+
+  <!-- small JS to demonstrate interactive focus behaviour if needed -->
+  <script>
+    // no JS needed for animation; this placeholder can be expanded if you want toggles
+  </script>
+</body>
+</html>
